@@ -5,15 +5,12 @@
  * （若有顺序必要，则依次调用）
  */
 
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
-const rewriteTitle = require('../.vitepress/rewrite-title/index.js')
+import rewriteTitle from '../.vitepress/rewrite-title/index.js'
 
-// 确保异步操作完成后再继续后续构建步骤
 async function runBuild() {
   try {
     await rewriteTitle()
-    // 在此添加其他构建步骤（如果有）
+    // 添加其他构建步骤（如果有）
   } catch (error) {
     console.error('构建失败:', error)
     process.exit(1)
