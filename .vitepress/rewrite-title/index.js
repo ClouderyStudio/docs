@@ -1,7 +1,8 @@
-const path = require('path')
-const fsp = require('fs').promises
-const matterService = require('../utils/frontmatter-service')
-const workspacePath = path.resolve(__dirname, '..', '..')
+import path from 'path'
+import { promises as fsp } from 'fs'
+import matterService from '../utils/frontmatter-service.js' // 注意添加文件扩展名
+
+const workspacePath = path.resolve(import.meta.dirname, '..', '..')
 
 const h1MdRegExp = /^#\s+(.+)\s+(\{#([\w-]+)\})$/
 /** 在此书写所有文章所在的目录名 */
@@ -20,18 +21,15 @@ const rewriteMarkdownTitle = (filePath) => {
 const ergodicDirectory = async (dirPath) => {
   try {
     const files = await fsp.readdir(dirPath)
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i],
-        filePath = path.join(dirPath, file)
+    for (const file of files) {
+      const filePath = path.join(dirPath, file)
       const stats = await fsp.stat(filePath)
       if (stats.isFile()) {
         if (filePath.split('.').pop().toLowerCase() === 'md') {
           rewriteMarkdownTitle(filePath)
         }
-      } else if (stats.isDirectory()) {
-        if (articleDirs.includes(filePath.split('/').pop())) {
-          await ergodicDirectory(filePath)
-        }
+      } else if (stats.isDirectory() && articleDirs.includes(file)) {
+        await ergodicDirectory(filePath)
       }
     }
   } catch (err) {
@@ -41,4 +39,5 @@ const ergodicDirectory = async (dirPath) => {
   }
 }
 
-module.exports = () => ergodicDirectory(workspacePath)
+// ES 模块默认导出
+export default () => ergodicDirectory(workspacePath)
