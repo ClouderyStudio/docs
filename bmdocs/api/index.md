@@ -13,4 +13,4 @@
 :::
 
  自定义Api图示:
- ![howtoues](/public/howuse.png)
+ ![howtoues](/howuse.png)

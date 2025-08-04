@@ -111,7 +111,7 @@ export default defineConfig({
 
     footer: {
       copyright:
-        'Copyright 2022-2025 Cloudery , Std.'
+        'Copyright &copy; 2022-2025 Cloudery, Std.'
     },
 
     nav: [

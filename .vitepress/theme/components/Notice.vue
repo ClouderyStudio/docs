@@ -21,7 +21,7 @@ setTimeout(function () { visible.value = false }, 5000);
             target="_blank">955122914</a>
         </strong>
       </p>
-      <img class="notice-img" src="/public/qqgroup-qrcode.jpg">
+      <img class="notice-img" src="/qqgroup-qrcode.jpg">
     </div>
     <div class="notice-footer">
       <div class="notice-btn" @click="closetz">朕知道了</div>

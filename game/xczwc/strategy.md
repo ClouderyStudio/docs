@@ -122,9 +122,9 @@ c级天赋
 前提推荐点暴击杠铃天赋，点满后有57.5%的
 
 暴击率，之后可以点制造翻倍。
-![](/public/pictures/1.png)
-![](/public/pictures/2.png)
-![](/public/pictures/3.png)
+![](/pictures/1.png)
+![](/pictures/2.png)
+![](/pictures/3.png)
    
 
 ⭐钻石
@@ -156,7 +156,7 @@ c级天赋
  
 
 普通僵尸
-![](/public/pictures/4.png)
+![](/pictures/4.png)
  
 
                 
@@ -172,7 +172,7 @@ c级天赋
  
 
 爬行僵尸
-![](/public/pictures/5.png)
+![](/pictures/5.png)
  
 
 生命:1.5⭐
@@ -194,8 +194,8 @@ c级天赋
  
 
 垃圾桶
-![](/public/pictures/6.png)
-![](/public/pictures/7.png)
+![](/pictures/6.png)
+![](/pictures/7.png)
 
 生命力:3⭐   攻击力:2⭐  攻击速度:1⭐ 移动速度:1⭐
 
@@ -206,8 +206,8 @@ c级天赋
 超长的攻击后摇时间攻击。
 
 爆炸小鬼
-![](/public/pictures/8.png)
-![](/public/pictures/9.png)
+![](/pictures/8.png)
+![](/pictures/9.png)
  
 
 生命:2⭐  攻击力:2.5⭐ 攻击速度:2s自爆 移动速度:2.5⭐
@@ -221,7 +221,7 @@ c级天赋
  
 
 干巴脸
-![](/public/pictures/10.png)
+![](/pictures/10.png)
  
 
 生命:2⭐  攻击力:2⭐  攻击速度:2⭐ 移动速度:2⭐
@@ -241,7 +241,7 @@ c级天赋
  
 
 强化普通丧尸
-![](/public/pictures/11.png)
+![](/pictures/11.png)
  
 
  
@@ -253,8 +253,8 @@ c级天赋
  
 
 强化爬行丧尸（身残志坚丧尸）
-![](/public/pictures/12.png)
-![](/public/pictures/13.png)
+![](/pictures/12.png)
+![](/pictures/13.png)
  
 
 生命:2⭐  攻击力:2⭐  攻击速度:2.5⭐  移动速度:2.5⭐
@@ -267,7 +267,7 @@ c级天赋
  
 
 掷斧丧尸
-![](/public/pictures/14.png)
+![](/pictures/14.png)
  
 
 生命:2⭐  攻击力:2.5⭐  攻击速度:极慢  移动速度:慢
@@ -281,7 +281,7 @@ c级天赋
  
 
 丧尸犬
-![](/public/pictures/15.png)
+![](/pictures/15.png)
  
 
  
@@ -293,8 +293,8 @@ c级天赋
  
 
 女鬼
-![](/public/pictures/16.png)
-![](/public/pictures/17.png)
+![](/pictures/16.png)
+![](/pictures/17.png)
  
 
  
@@ -316,7 +316,7 @@ c级天赋
  只有爆炸小子是我们最忠实的友军，如果实在打不过，就造路障吧！
 
  最后附加一张boss的图片，打不过就造路障，存钻石买ak横扫把。
-![](/public/pictures/18.png)
+![](/pictures/18.png)
  
 
  
@@ -464,8 +464,8 @@ s12k:神挡杀神，当下版本无论是氪佬还是平民，s12k的使用效�
 2.   快速退出搜索的房间
 
 这个可以用来节省饱食度和精力消耗，方便玩家搜完房间之后快速行动，只需要点击右边菜单的保存返回主界面即可。
-![](/public/pictures/19.png)
-![](/public/pictures/20.png)
+![](/pictures/19.png)
+![](/pictures/20.png)
  
 
 3.   刷机场
