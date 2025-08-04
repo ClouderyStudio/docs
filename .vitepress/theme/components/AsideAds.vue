@@ -1,6 +1,6 @@
 <template>
   <a class="viteconf" href="https://cldery.com" target="_blank">
-    <img width="22" height="22" src="/public/main.png" />
+    <img width="22" height="22" src="/main.png" />
     <span>
       <p class="extra-info">云术工作室官网正式投入使用</p>
       <p class="heading">Cloudery</p>
