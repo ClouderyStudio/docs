@@ -1,11 +1,14 @@
 # API 基本信息
 
- **注:需要科学上网,且节点为美国**
+::: tip 提示
+需要科学上网,且节点为美国,获得key之后,可以用中转api直连
+:::
 
 |配置项|说明|
 |--|--|
 |API 名称|Google API|
-|API 基础 URL|`https://generativelanguage.googleapis.com/v1beta/openai/`<br>(这么填并不规范,但是按规范的填会报错😅)|
+|API 基础 URL|`https://generativelanguage.googleapis.com/v1beta/openai/` <br>(这么填并不规范,但是按规范的填会报错😅)|
+|中转API 基础 URL|`https://gemini.114514.fan/v1` <br>(由云术工作室搭建❤)|
 |官方文档|[Google AI平台](https://aistudio.google.com/)|
 |API 路径|`chat/completions`|
 |API 密钥|请登录平台自行查看|
