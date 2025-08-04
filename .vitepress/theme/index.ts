@@ -5,7 +5,7 @@ import Theme from 'vitepress/theme'
 import DefaultLayout from './DefaultLayout.vue'
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import ArticleMetadata from './components/ArticleMetadata.vue'
-import MNavLinks from './components/MNavLinks.vue'
+import MNavlinks from './components/MNavlinks.vue'
 import SvgImage from './components/SvgImage.vue'
 
 export default {
@@ -20,7 +20,7 @@ export default {
   },
   enhanceApp({ app , router }) {
     app.component('ArticleMetadata' , ArticleMetadata)
-    app.component('MNavLinks' , MNavLinks)
+    app.component('MNavlinks' , MNavlinks)
     app.component('SvgImage' , SvgImage)
 
     if (inBrowser) {

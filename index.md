@@ -27,7 +27,3 @@ features:
     title: 丰富的项目
     details: 游戏、前端、后端，应有尽有!
 ---
-
-<script setup>
-import { onMounted } from 'vue'
-</script>
