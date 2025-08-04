@@ -14,7 +14,7 @@ export const core = [
     desc: '我是柒屹，同时也是云术工作室重要成员之一，屹立不倒。从事互联网事业及Web开发工作，也在搞关于Java的一些东西',
   },
   {
-    avatar: './bm.png',
+    avatar: 'http://q.qlogo.cn/headimg_dl?dst_uin=971995487&spec=640&img_type=jpg',
     name: '笔墨星河AI写作',
     title: '创始人&软件作者',
     org: '笔墨星河',
