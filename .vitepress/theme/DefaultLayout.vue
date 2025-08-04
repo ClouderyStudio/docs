@@ -5,11 +5,9 @@ import { nextTick, provide } from 'vue'
 
 // Import components here
 import Bsz from './components/Bsz.vue'
-import HomeSponsors from './components/HomeSponsors.vue'
-import AsideSponsors from './components/AsideSponsors.vue'
-import SvgImage from './components/SvgImage.vue'
-import WwAds from './components/WwAds.vue'
-import LayoutTop from "./components/LayoutTop.vue"
+import AsideAds from './components/AsideAds.vue'
+import MouseClick from './components/MouseClick.vue';
+import MouseFollower from './components/MouseFollower.vue'
 import Notice from './components/Notice.vue'
 
 // Import css files here
@@ -65,17 +63,12 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     <template #layout-bottom>
       <Bsz />
     </template>
-    <template #home-features-after>
-      <HomeSponsors />
-    </template>
-    <template #aside-outline-after>
-      <WwAds />
-    </template>
     <template #aside-bottom>
-      <AsideSponsors />
+      <AsideAds />
     </template>
     <template #layout-top>
-      <LayoutTop />
+      <MouseClick />
+      <MouseFollower />
       <Notice />
     </template>
   </DefaultTheme.Layout>

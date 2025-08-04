@@ -1,22 +1,3 @@
-<script setup lang="ts">
-import { computed } from 'vue'
-import { VPDocAsideSponsors } from 'vitepress/theme'
-import { useSponsor } from '../composables/sponsor'
-
-const { data } = useSponsor()
-
-const sponsors = computed(() => {
-  return (
-    data?.value.map((sponsor) => {
-      return {
-        size: sponsor.size === 'big' ? 'mini' : 'xmini',
-        items: sponsor.items,
-      }
-    }) ?? []
-  )
-})
-</script>
-
 <template>
   <a class="viteconf" href="https://cldery.com" target="_blank">
     <img width="22" height="22" src="/public/main.png" />
