@@ -2,7 +2,7 @@ import type { NavData } from "../.vitepress/utils/types"
 
 export const NAV_DATA: NavData[] = [
   {
-    title: '云术团队|Cloudery',
+    title: '云术团队 Cloudery',
     items: [
       {
         title: '云术工作室 | Cloudery Studio Official Site',
