@@ -7,6 +7,14 @@
       <p class="extra-info">快来捧个场!</p>
     </span>
   </a>
+  <a class="viteconf" href="https://creativecommons.org/share-your-work/cclicenses/" target="_blank">
+    <img width="22" height="22" src="/cc-by-nc-nd.png" />
+    <span>
+      <p class="extra-info">本网站使用</p>
+      <p class="heading">CC BY-NC-ND 协议</p>
+      <p class="extra-info">详情点击查看</p>
+    </span>
+  </a>
 </template>
 
 <style>

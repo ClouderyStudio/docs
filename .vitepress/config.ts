@@ -121,7 +121,7 @@ export default defineConfig({
 
     footer: {
       copyright:
-        'Copyright &copy; 2022-2025 Cloudery, Std.'
+        'Released under the CC BY-NC-ND License.<br/>Copyright &copy; 2022-2025 Cloudery, Std.'
     },
 
     nav,
