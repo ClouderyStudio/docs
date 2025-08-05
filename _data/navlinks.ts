@@ -2,11 +2,11 @@ import type { NavData } from "../.vitepress/utils/types"
 
 export const NAV_DATA: NavData[] = [
   {
-    title: '云术团队|Cloudery',
+    title: '云术团队 Cloudery',
     items: [
       {
         title: '云术工作室 | Cloudery Studio Official Site',
-        link: 'https://cdery.com'
+        link: 'https://cldery.com'
       },
       {
         title: '生存战争论坛盒子',
@@ -14,7 +14,7 @@ export const NAV_DATA: NavData[] = [
       },
       {
         title: '云术博客 - 新时代的伟岸开拓者',
-        link: 'https://blog.cdery.com'
+        link: 'https://blog.cldery.com'
       },
       {
         title: 'MC竹像素',
@@ -22,11 +22,11 @@ export const NAV_DATA: NavData[] = [
       },
       {
         title: '云术文档站',
-        link: 'https://doc.cdery.com'
+        link: 'https://doc.cldery.com'
       },
       {
         title: '云术生存战争服务器官网',
-        link: 'https://sc.cdery.com'
+        link: 'https://sc.cldery.com'
       },
       {
         title: '云术小游戏平台',
@@ -50,7 +50,7 @@ export const NAV_DATA: NavData[] = [
       },
       {
         title: 'ClouderyAList',
-        link: 'https://a.cdery.com'
+        link: 'https://a.cldery.com'
       },
       {
         title: '人生重开模拟器破解版',
