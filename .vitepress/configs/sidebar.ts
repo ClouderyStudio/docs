@@ -49,7 +49,14 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
             },
             {
               text: '竹像素MC服务器',
-              link: 'https://www.zhuxs.cn/rules',
+              link: '/game/mc/',
+              items: [
+                {
+                  text: "服规",
+                  link: 'https://zhuxs.cn/rules'
+                },
+                // W.I.P
+              ]
             },
             {
               text: '云术生存战争服务器',

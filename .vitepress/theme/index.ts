@@ -6,7 +6,6 @@ import DefaultLayout from './DefaultLayout.vue'
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import ArticleMetadata from './components/ArticleMetadata.vue'
 import MNavLinks from './components/MNavLinks.vue'
-import SvgImage from './components/SvgImage.vue'
 import mediumZoom from 'medium-zoom';
 import { NProgress } from 'nprogress-v2/dist/index.js'
 import 'nprogress-v2/dist/index.css'
@@ -24,7 +23,6 @@ export default {
   enhanceApp({ app , router }) {
     app.component('ArticleMetadata' , ArticleMetadata)
     app.component('MNavLinks' , MNavLinks)
-    app.component('SvgImage' , SvgImage)
 
     if (inBrowser) {
       NProgress.configure({ showSpinner: false })
