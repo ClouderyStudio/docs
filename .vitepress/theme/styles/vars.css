@@ -130,3 +130,11 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.medium-zoom-overlay {
+  z-index: 30;
+}
+
+.medium-zoom-image {
+  z-index: 9999 !important;
+}

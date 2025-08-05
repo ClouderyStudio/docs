@@ -1,4 +1,4 @@
-import { h } from 'vue'
+import { h, onMounted, watch, nextTick } from 'vue'
 import { inBrowser, useData, useRoute } from 'vitepress'
 import busuanzi from 'busuanzi.pure.js'
 import Theme from 'vitepress/theme'
@@ -7,6 +7,9 @@ import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import ArticleMetadata from './components/ArticleMetadata.vue'
 import MNavlinks from './components/MNavlinks.vue'
 import SvgImage from './components/SvgImage.vue'
+import mediumZoom from 'medium-zoom';
+import { NProgress } from 'nprogress-v2/dist/index.js'
+import 'nprogress-v2/dist/index.css'
 
 export default {
   ...Theme,
@@ -24,15 +27,21 @@ export default {
     app.component('SvgImage' , SvgImage)
 
     if (inBrowser) {
+      NProgress.configure({ showSpinner: false })
+      router.onBeforeRouteChange = () => {
+        NProgress.start()
+      }
       router.onAfterRouteChanged = () => {
         busuanzi.fetch()
+        NProgress.done()
       }
     }
   },
   setup() {
     const { frontmatter } = useData();
     const route = useRoute();
-        
+
+    // giscus
     giscusTalk({
       repo: 'ClouderyStudio/docs',
       repoId: 'R_kgDOMDgnhw',
@@ -46,6 +55,18 @@ export default {
         frontmatter, route
       },
       true
+    );
+
+    // mediumZoom
+    const initZoom = () => {
+      mediumZoom('.main img', { background: 'var(--vp-c-bg)' });
+    };
+    onMounted(() => {
+      initZoom();
+    });
+    watch(
+      () => route.path,
+      () => nextTick(() => initZoom())
     );
   }
 }
