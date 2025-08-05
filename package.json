@@ -21,8 +21,7 @@
 	},
 	"scripts": {
 		"dev": "vitepress dev --host",
-		"build": "node ./scripts/build.mjs && vitepress build .",
-		"serve": "vitepress serve .",
-		"pages": "npx vitepress build"
+		"build": "vitepress build .",
+		"serve": "vitepress serve ."
 	}
 }
