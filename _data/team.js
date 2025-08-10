@@ -11,7 +11,7 @@ export const core = [
     name: '柒屹',
     title: '创始人',
     org: 'Cloudery',
-    desc: '我是柒屹，柒阶浮屠，屹立不倒。从事互联网事业及网站开发工作，也在搞Java的一些东西。',
+    desc: '我是柒屹，柒星拱月，屹立不倒。从事互联网事业及网站开发工作，也在搞Java的一些东西。',
   },
   {
     avatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=971995487&spec=640&img_type=jpg',
