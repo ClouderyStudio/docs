@@ -130,6 +130,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 link: '/bmdocs/'
             },
             {
+                text: '笔墨星河Q&A问答',
+                link: 'https://www.kdocs.cn/l/cakYivHfb2bj'
+            },
+            {
               text: 'api配置',
               link: '/bmdocs/api/',
               items: [
