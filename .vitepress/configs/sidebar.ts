@@ -10,12 +10,16 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 link: '/docs/'
             },
             {
-                text: '歌单',
-                link: '/docs/MusicList.md',
+                text: '群聊',
+                link: '/docs/group.md',
             },
             {
                 text: '捐赠',
                 link: '/docs/donate.md',
+            },
+            {
+                text: '歌单',
+                link: '/docs/MusicList.md',
             }
           ],
         },

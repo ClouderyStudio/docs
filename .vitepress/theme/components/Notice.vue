@@ -14,18 +14,15 @@ setTimeout(function () { visible.value = false }, 15000);
   <div v-if="visible" class="notice">
     <h3 class="notice-title">公告</h3>
     <div class="notice-describe">
-      <p>* 建议加入交流群</p>
       <p class="notice-domain">
         <strong>
-          云术综合科技交流群：
-          <br>
-          <a href="https://qm.qq.com/q/HjdLirG3S0" target="_blank">955122914</a>
+          建议你加入群聊哦~
         </strong>
       </p>
-      <img class="notice-img" src="/qqgroup-qrcode.jpg">
     </div>
     <div class="notice-footer">
-      <div class="notice-btn" @click="closetz">朕 晓 之</div>
+      <a class="notice-btn" href="/docs/group.html" @click="closetz">群聊列表</a>
+      <div class="notice-btn" @click="closetz">朕晓之</div>
     </div>
   </div>
 </template>

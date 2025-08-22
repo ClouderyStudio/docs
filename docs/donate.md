@@ -2,6 +2,8 @@
 
 ## 捐助渠道
 
-捐助竹像素: [点击前往(爱发电)](https://afdian.net/a/zhuxs)
+<iframe src="https://afdian.com/leaflet?slug=zhuxs" width="100%" scrolling="no" height="200" frameborder="0"></iframe>
+<br>
+<iframe src="https://afdian.com/leaflet?slug=cloudery" width="100%" scrolling="no" height="200" frameborder="0"></iframe>
 
 感谢捐赠(◦˙▽˙◦)

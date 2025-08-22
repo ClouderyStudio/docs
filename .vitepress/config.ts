@@ -68,7 +68,7 @@ export default defineConfig({
       },
       {
         icon: "qq",
-        link: "https://qm.qq.com/q/if7zPtjiHm"
+        link: "/docs/group.html"
       }
     ],
 

@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "cloudery docs",
 	"type": "module",
-	"author": "JustQiyi, YZ",
+	"author": "JustQiyi, YunZhu",
 	"private": true,
 	"devDependencies": {
 		"@mdit-vue/shared": "^2.1.4",
