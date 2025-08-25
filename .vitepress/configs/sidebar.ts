@@ -142,6 +142,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
               link: '/bmdocs/api/',
               items: [
                 {
+                    text: 'api代理地址',
+                    link: '/bmdocs/api/ApiProxy.md',
+                },
+                {
                     text: 'deepseek',
                     link: '/bmdocs/api/deepseek.md',
                 },
