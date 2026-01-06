@@ -77,6 +77,16 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                   ]
             },
             {
+              text: '环世界 RimWorld',
+              link: '/game/rimworld/',
+              items: [
+                  {
+                      text: 'Rimtalk 配置指南',
+                      link: '/game/rimworld/index.md',
+                  }
+              ]
+            },
+            {
               text: '幸存者危城',
               link: '/game/xczwc/',
               items: [
