@@ -12,7 +12,13 @@
 4. 点击 **云提供商**，选择 `custom`。
 5. 点击 **云API配置** 的加号。
 
-## 3. 配置硅基流动 API
+## 3. 配置AI API
+
+Rimtalk支持多种AI API服务，您可以选择以下任一方案进行配置。
+
+### 3.1 硅基流动 API（免费额度）
+
+硅基流动提供注册即送的2000万Tokens免费额度，适合初次体验。
 
 1. 登录 [硅基流动](https://cloud.siliconflow.cn/i/2xPns3H4)。
    - 邀请码：`2xPns3H4`
@@ -23,11 +29,11 @@
 4. 模型选择后点击复制。
 5. 最后 **基础URL** 填 `https://api.siliconflow.cn/`。
 
-## 4. 配置智谱AI API（GLM-4-FlashX 3折尝鲜包）
+### 3.2 智谱AI API（GLM-4-FlashX 3折尝鲜包）
 
-智谱AI提供了高性价比的GLM-4-FlashX资源包，3元可获得1亿Tokens，有效期3个月，适合Rimtalk模组使用。
+智谱AI提供了高性价比的GLM-4-FlashX资源包，3元可获得1亿Tokens，有效期3个月，适合长期使用。
 
-### 购买资源包
+#### 购买资源包
 
 1. 访问 [智谱AI资源包页面](https://bigmodel.cn/finance-center/resource-package/package-mgmt)
 2. 找到 **GLM-4-FlashX 3折尝鲜包**（价格：3元）
@@ -36,26 +42,27 @@
    - **有效期：** 3个月
    - **模型：** GLM-4-FlashX（30B参数，高速推理）
 
-### 获取API密钥
+#### 获取API密钥
 
 1. 登录 [智谱AI平台](https://open.bigmodel.cn/usercenter/)
 2. 进入「[API密钥](https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys)」管理页面
 3. 创建或复制您的API密钥
 
-### 游戏内配置
+#### 游戏内配置
 
 1. 在Rimtalk模组配置中，**云提供商**选择 `custom`
-2. **基础URL**填写：`https://open.bigmodel.cn/api/paas/v4`
+2. **基础URL**填写：`https://open.bigmodel.cn/api/paas/v4/chat/completions`
 3. **API密钥**填写从智谱AI平台获取的密钥
 4. **模型**选择：`glm-4-flashx` 或 `glm-4-flash`（根据可用模型列表）
 
-### 注意事项
+#### 注意事项
 
-- 智谱AI的API路径为 `/chat/completions`，Rimtalk会自动处理
-- 如果遇到模型不可用，可尝试 `glm-4-air` 或 `glm-4-plus`
+- 本文中智谱AI的API路径是完整的，这是由于Rimtalk的处理URL有问题
+- 如果遇到模型不可用，可尝试 `glm-4-air` 或 `glm-4-plus` (会额外造成费用)
 - 资源包有使用期限，请合理安排使用量
+- 智谱也有免费模型，如果你足够聪明，可以查看[智谱免费模型的文档站](https://docs.bigmodel.cn/cn/guide/models/free)
 
-## 5. AI 指令设置
+## 4. AI 指令设置
 
 关于页面第二页 **AI指令** 这里，复制下面的文字内容过去：
 
@@ -93,6 +100,6 @@
 对奴隶根据自身性格和派系文化有冷酷、严厉、威胁、恐吓，并根据当前奴隶工作下命令。
 ```
 
-## 6. 完成
+## 5. 完成
 
 最后关闭配置界面就可以游戏了。
