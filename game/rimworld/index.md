@@ -20,8 +20,8 @@ Rimtalk支持多种AI API服务，您可以选择以下任一方案进行配置�
 
 硅基流动提供注册即送的2000万Tokens免费额度，适合初次体验。
 
-1. 登录 [硅基流动](https://cloud.siliconflow.cn/i/2xPns3H4)。
-   - 邀请码：`2xPns3H4`
+1. 登录 [硅基流动](https://cloud.siliconflow.cn/i/Bsl2A8Mv)。
+   - 邀请码：`Bsl2A8Mv`
    - **说明：** 注册即送 2000 万 Tokens。
 2. 登录后点击 **API密钥**，选择 **新建API**。
 3. 复制密钥后填入游戏中的配置项。
