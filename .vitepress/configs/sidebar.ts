@@ -234,6 +234,22 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 {
                     text: 'Qwen3-235B-A22B',
                     link: '/bmdocs/example/qwen3-235b-a22b.md',
+                },
+                {
+                    text: 'DeepSeek V4 Flash',
+                    link: '/bmdocs/example/deepseek-v4-flash.md',
+                },
+                {
+                    text: 'DeepSeek V4 Flash（无思考）',
+                    link: '/bmdocs/example/deepseek-v4-flash-nothink.md',
+                },
+                {
+                    text: 'DeepSeek V4 Pro',
+                    link: '/bmdocs/example/deepseek-v4-pro.md',
+                },
+                {
+                    text: 'DeepSeek V4 Pro（无思考）',
+                    link: '/bmdocs/example/deepseek-v4-pro-nothink.md',
                 }
               ]
             }
