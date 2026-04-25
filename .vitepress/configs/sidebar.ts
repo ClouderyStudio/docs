@@ -152,7 +152,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
               link: '/bmdocs/api/',
               items: [
                 {
-                    text: 'api代理地址',
+                    text: 'api代理地址(专业)',
                     link: '/bmdocs/api/ApiProxy.md',
                 },
                 {
@@ -168,15 +168,23 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                     link: '/bmdocs/api/OpenRouter.md',
                 },
                 {
-                    text: 'gemini',
+                    text: 'Gemini',
                     link: '/bmdocs/api/gemini.md',
                 },
                 {
-                    text: 'bigmodel(智谱)',
+                    text: 'BigModel(智谱)',
                     link: '/bmdocs/api/bigmodel.md',
                 },
                 {
-                    text: 'ollama',
+                    text: 'TokenHub',
+                    link: '/bmdocs/api/tokenhub.md',
+                },
+                {
+                    text: 'ModelScope',
+                    link: '/bmdocs/api/modelscope.md',
+                },
+                {
+                    text: 'Ollama',
                     link: '/bmdocs/api/ollama.md',
                 }
               ]
