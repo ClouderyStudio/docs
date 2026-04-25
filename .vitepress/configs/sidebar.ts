@@ -186,6 +186,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 {
                     text: 'Ollama',
                     link: '/bmdocs/api/ollama.md',
+                },
+                {
+                    text: '阿里百炼',
+                    link: '/bmdocs/api/bailian.md',
                 }
               ]
             },
