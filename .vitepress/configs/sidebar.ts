@@ -190,6 +190,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 {
                     text: '阿里百炼',
                     link: '/bmdocs/api/bailian.md',
+                },
+                {
+                    text: 'ZenMux',
+                    link: '/bmdocs/api/zenmux.md',
                 }
               ]
             },
