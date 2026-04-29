@@ -1,5 +1,5 @@
----
-sidebar_position: 1
+﻿---
+description: 云术工作室学习资料页面，提供各类学习资源和作业信息
 ---
 
 # 简介

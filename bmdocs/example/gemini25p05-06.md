@@ -1,3 +1,7 @@
+﻿---
+description: Gemini 2.5 Pro Preview 05-06模型AI写作输出实例，展示小说创作的AI生成内容
+---
+
 # Gemini 2.5 Pro Preview 05-06
 第一章 寒山不堪留
 

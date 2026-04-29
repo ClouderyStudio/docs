@@ -1,3 +1,7 @@
+﻿---
+description: TokenHub API配置教程，提供免费额度，支持多种AI模型的一站式调用
+---
+
 # API 基本信息
 
 ::: tip 提示
@@ -93,3 +97,4 @@ curl https://tokenhub.tencentmaas.com/v1/chat/completions \
     ]
   }'
 ```
+

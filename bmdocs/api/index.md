@@ -1,3 +1,7 @@
+﻿---
+description: AI API对接配置教程，教你如何对接各类AI模型API，包括DeepSeek、硅基流动、OpenRouter等平台
+---
+
 # AI API 对接配置教程
 
  本篇目会教你如何对接ai api

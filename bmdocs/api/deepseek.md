@@ -1,3 +1,7 @@
+﻿---
+description: DeepSeek API配置教程，支持deepseek-v4-flash和deepseek-v4-pro模型，兼容OpenAI和Anthropic协议
+---
+
 # API 基本信息
 
 |配置项|说明|
@@ -110,3 +114,4 @@ print(response.choices[0].message.content)
 ### 扣费规则
 
 扣减费用 = token 消耗量 × 模型单价，对应的费用将直接从充值余额或赠送余额中进行扣减。当充值余额与赠送余额同时存在时，优先扣减赠送余额。
+

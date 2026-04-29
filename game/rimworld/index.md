@@ -1,3 +1,7 @@
+﻿---
+description: RimWorld环世界Rimtalk配置指南，帮助玩家配置和使用Rimtalk语音模组
+---
+
 # Rimtalk 配置指南
 
 ## 1. 安装模组
@@ -103,3 +107,4 @@ Rimtalk支持多种AI API服务，您可以选择以下任一方案进行配置�
 ## 5. 完成
 
 最后关闭配置界面就可以游戏了。
+

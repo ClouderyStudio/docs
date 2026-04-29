@@ -1,3 +1,7 @@
+﻿---
+description: ModelScope魔搭API配置教程，提供免费额度，支持多种开源模型调用
+---
+
 # API 基本信息
 
 ::: tip 提示
@@ -99,3 +103,4 @@ print(message.content[0].text)
 - 模型名称使用魔搭上的 Model Id，不同模型可能在不同时间上线或下线
 - 具体使用额度请关注官方使用限制说明
 - 如需高并发、大额度的使用，可考虑通过 API-Provider 能力绑定外部 API 提供方
+

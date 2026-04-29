@@ -1,3 +1,7 @@
+﻿---
+description: API代理地址服务列表，支持聊天补全、图像生成、语音转文字等多平台API代理
+---
+
 # 🌐 支持的 API 服务列表
 
 [开源地址](https://github.com/ClouderyStudio/api-proxy)  

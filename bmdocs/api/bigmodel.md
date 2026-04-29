@@ -1,3 +1,7 @@
+﻿---
+description: BigModel智谱API配置教程，提供免费额度，支持智谱AI系列模型调用
+---
+
 # API 基本信息
 
 ::: tip 提示

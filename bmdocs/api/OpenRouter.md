@@ -1,3 +1,7 @@
+﻿---
+description: OpenRouter API配置教程，笔墨星河默认模型平台，支持多种AI模型调用
+---
+
 # API 基本信息
 
 ::: tip 提示

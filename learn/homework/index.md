@@ -1,5 +1,5 @@
----
-sidebar_position: 2
+﻿---
+description: 云术工作室作业记录页面，记录各科目作业内容和要求
 ---
 # 2023.10.27
 物理:
@@ -22,4 +22,5 @@ sidebar_position: 2
 化学:
 背诵根公式
 ![Snipaste_2023-10-27_22-04-51](https://picss.sunbangyan.cn/2023/10/27/5ff77f87877cb5410890a9c4612e44ba.jpg)
+
 

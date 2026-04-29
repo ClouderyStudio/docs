@@ -1,3 +1,7 @@
+﻿---
+description: 笔墨星河功能演示系列教程，包括自定义API设置、AI对话、小说创作等功能讲解
+---
+
 # 笔墨星河功能演示系列
 1. **自定义API设置讲解**  
    https://www.bilibili.com/video/BV1iKE1zDETt

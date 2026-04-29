@@ -1,5 +1,5 @@
----
-sidebar_position: 1
+﻿---
+description: 笔墨星河AI辅助小说写作软件介绍，支持Win端，提供API配置、下载和AI参考输出实例等功能
 ---
 
 # 简介

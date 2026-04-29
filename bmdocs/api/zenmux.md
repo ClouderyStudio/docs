@@ -1,3 +1,7 @@
+﻿---
+description: ZenMux企业级大模型聚合平台API配置，支持OpenAI/Anthropic/Gemini协议，具备AI保险赔付机制
+---
+
 # API 基本信息
 
 |配置项|说明|
@@ -358,3 +362,4 @@ curl https://zenmux.ai/api/v1/management/flow_rate \
 - 商务合作邮箱：[bd@zenmux.ai](mailto:bd@zenmux.ai)
 - Twitter：[@ZenMuxAI](https://twitter.com/ZenMuxAI)
 - Discord 社区：<http://discord.gg/vHZZzj84Bm>
+

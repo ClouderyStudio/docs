@@ -1,6 +1,6 @@
 ---
 layout: home
-
+description: 云术工作室Cloudery Studio文档站，提供笔墨星河AI写作软件、游戏服务、API配置、学习资料等文档支持
 title: ClouderyDoc
 titleTemplate: 云术工作室文档站
 

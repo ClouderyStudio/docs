@@ -1,3 +1,7 @@
+﻿---
+description: 幸存者危城游戏交流方式页面，提供游戏相关联系方式
+---
+
 # 交流方式
 
 ::: tip 提示
@@ -24,3 +28,4 @@
 ------------
 
 旧版网页 https://docs.qq.com/doc/DVWlNTFVMQW9ZS2J5
+

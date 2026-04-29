@@ -1,3 +1,7 @@
+﻿---
+description: 硅基流动SiliconFlow API配置教程，提供高速推理、高性价比的大模型API服务，有免费额度
+---
+
 # API 基本信息
 
 ::: tip 提示
@@ -119,3 +123,4 @@ curl https://api.siliconflow.cn/v1/chat/completions \
 在用手机号注册时使用邀请链接或邀请码可获得 16 元平台额度：
 - [邀请链接](https://cloud.siliconflow.cn/i/Bsl2A8Mv)
 - 邀请码 `Bsl2A8Mv`
+

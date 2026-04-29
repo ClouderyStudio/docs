@@ -1,3 +1,7 @@
+﻿---
+description: Google Gemini API配置教程，需要科学上网使用，支持Gemini系列模型调用
+---
+
 # API 基本信息
 
 ::: tip 提示

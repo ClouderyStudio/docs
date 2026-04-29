@@ -1,3 +1,7 @@
+﻿---
+description: 阿里云百炼API配置教程，提供新人免费额度，集成千问及主流第三方大模型
+---
+
 # API 基本信息
 
 ::: tip 提示
@@ -151,3 +155,4 @@ curl https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
 ## 更新日志
 
 - **2026-03-25 13:47:35** — 更新文档内容
+
