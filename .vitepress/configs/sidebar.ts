@@ -40,6 +40,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 text: '云术论坛用户协议',
                 link: '/serve/BbsRules.md',
             },
+            {
+                text: '共享后台群规',
+                link: '/serve/HeartTreeHoleGroupRules.md',
+            },
           ],
         },
       ],
