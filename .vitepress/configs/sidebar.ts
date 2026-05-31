@@ -44,6 +44,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 text: '共享后台群规',
                 link: '/serve/HeartTreeHoleGroupRules.md',
             },
+            {
+                text: '共享后台群规细纲',
+                link: '/serve/HeartTreeHoleDetailedRules.md',
+            },
           ],
         },
       ],
