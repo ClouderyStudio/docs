@@ -1,4 +1,5 @@
 ﻿---
+title: RimTalk 配置指南
 description: RimWorld环世界Rimtalk配置指南，帮助玩家配置和使用Rimtalk语音模组
 ---
 
@@ -8,6 +9,10 @@ RimTalk 可以让《环世界》小人根据当前状态、关系、事件和性
 
 ::: tip 先看结论
 想省事就先试 **DeepSeek 官方 API**；想用赠额或免费模型就试 **硅基流动**；已经买了智谱资源包则用 **智谱 AI**。第一次配置时建议只启用一个 API，能正常出对话后再考虑备用配置。
+:::
+
+::: warning 遇到生成失败先看这里
+如果你是因为 `rimtalk生成失败`、`json deserialization failed`、`403`、`404`、硅基流动不通进来的，先看 [RimTalk 生成失败与常见错误解决](/game/rimworld/errors.md)。那里按错误类型整理了更快的排查步骤。
 :::
 
 ## 1. 安装模组
@@ -233,7 +238,14 @@ API 能跑通后，再回到 RimTalk 的基础设置里调对话频率和对象�
 
 确认 API 能正常生成对话后，就可以一边玩一边微调频率、对象范围和 AI 指令了。想省额度就提高冷却时间、少开非殖民者；想热闹就降低冷却时间，并允许访客、囚犯、敌人也参与对话。
 
-## 8. 参考资料
+## 8. 延伸阅读
+
+- [RimTalk 生成失败与常见错误解决](/game/rimworld/errors.md)
+- [RimTalk 提示词与常识库建议](/game/rimworld/prompts.md)
+- [硅基流动 API 配置](/bmdocs/api/siliconflow.md)
+- [DeepSeek API 配置](/bmdocs/api/deepseek.md)
+
+## 9. 参考资料
 
 - [小白摸索出来的 rimtalk 国内 api 使用方法，求大佬别喷](https://www.vgover.com/news/179598)
 - [提示词作者主页](https://tieba.baidu.com/home/main?id=tb.1.f47f2e51.W66hU7JgrVJyvEVJ1F3zAA?t=1711599412&fr=pb)

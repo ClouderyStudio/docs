@@ -91,6 +91,24 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                   {
                       text: 'Rimtalk 配置指南',
                       link: '/game/rimworld/index.md',
+                  },
+                  {
+                      text: 'RimTalk 生成失败解决',
+                      link: '/game/rimworld/errors.md',
+                  },
+                  {
+                      text: 'RimTalk 提示词与常识库',
+                      link: '/game/rimworld/prompts.md',
+                  }
+              ]
+            },
+            {
+              text: 'Astral 联机工具',
+              link: '/game/astral/',
+              items: [
+                  {
+                      text: 'Astral 下载与联机',
+                      link: '/game/astral/index.md',
                   }
               ]
             },
