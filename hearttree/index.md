@@ -5,6 +5,24 @@ description: 云术心理树洞——群规、机器人D酱、脑电波、栖所
 
 <style src="/.vitepress/theme/styles/hearttree.css"></style>
 
+<script setup>
+import { onMounted, onBeforeUnmount } from 'vue'
+
+function onCardClick(e) {
+  const card = e.target.closest('.ht-card[href^="tel:"]')
+  if (!card) return
+  e.preventDefault()
+  const tel = card.getAttribute('href')
+  const label = card.querySelector('.ht-card-tel')?.textContent || tel
+  if (window.confirm(`确定要拨打 ${label} 吗？`)) {
+    window.location.href = tel
+  }
+}
+
+onMounted(() => document.addEventListener('click', onCardClick))
+onBeforeUnmount(() => document.removeEventListener('click', onCardClick))
+</script>
+
 # 心理树洞
 
 ::: warning 本群群规 请认真观看并遵守
@@ -62,7 +80,7 @@ description: 云术心理树洞——群规、机器人D酱、脑电波、栖所
 
 ## 心理援助热线 📞
 
-*轻触号码卡片可跳转到拨号界面。*
+*轻触号码卡片会弹出确认提示，确认后进入拨号界面。*
 
 <div class="ht-cards">
   <a class="ht-card" href="tel:4001619995">
