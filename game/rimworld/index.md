@@ -242,6 +242,7 @@ API 能跑通后，再回到 RimTalk 的基础设置里调对话频率和对象�
 
 - [RimTalk 生成失败与常见错误解决](/game/rimworld/errors.md)
 - [RimTalk 提示词与常识库建议](/game/rimworld/prompts.md)
+- [RimJobWorld 下载与安装（18+）](/game/rimworld/rjw.md)
 - [硅基流动 API 配置](/bmdocs/api/siliconflow.md)
 - [DeepSeek API 配置](/bmdocs/api/deepseek.md)
 

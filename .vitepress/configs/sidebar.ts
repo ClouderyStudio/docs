@@ -99,6 +99,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                   {
                       text: 'RimTalk 提示词与常识库',
                       link: '/game/rimworld/prompts.md',
+                  },
+                  {
+                      text: 'RimJobWorld 下载与安装',
+                      link: '/game/rimworld/rjw.md',
                   }
               ]
             },
