@@ -40,13 +40,24 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 text: '云术论坛用户协议',
                 link: '/serve/BbsRules.md',
             },
+          ],
+        },
+      ],
+      '/hearttree/': [
+        {
+          text: '心理树洞',
+          items: [
+            {
+                text: '开始',
+                link: '/hearttree/'
+            },
             {
                 text: '共享后台群规',
-                link: '/serve/HeartTreeHoleGroupRules.md',
+                link: '/hearttree/HeartTreeHoleGroupRules.md',
             },
             {
                 text: '共享后台群规细纲',
-                link: '/serve/HeartTreeHoleDetailedRules.md',
+                link: '/hearttree/HeartTreeHoleDetailedRules.md',
             },
           ],
         },
