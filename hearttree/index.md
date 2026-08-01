@@ -62,6 +62,8 @@ description: 云术心理树洞——群规、机器人D酱、脑电波、栖所
 
 ## 心理援助热线 📞
 
+*轻触号码卡片可跳转到拨号界面。*
+
 <div class="ht-cards">
   <a class="ht-card" href="tel:4001619995">
     <div class="ht-card-title">希望24热线</div>
