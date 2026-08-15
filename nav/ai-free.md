@@ -1,5 +1,5 @@
 ﻿---
-description: AI 免费额度与活动汇总，整理可以白嫖的模型入口、赠送额度兑换流程和限时邀请活动
+description: AI 免费额度与活动汇总，持续更新可以白嫖的 AI 模型额度、注册送积分兑换流程和限时邀请活动，涵盖 Grok、DeepSeek、Kimi、Codex、OpenSquilla、OpenCode 等模型入口，附推广链接、使用注意事项与评论区反馈补充，一切以平台实际显示为准。
 ---
 
 # AI 免费额度与活动汇总
@@ -11,30 +11,38 @@ description: AI 免费额度与活动汇总，整理可以白嫖的模型入口�
 发现失效、额度变少或有新活动，欢迎直接在本页评论区留言补充（格式见文末），看到后会整理进正文。
 :::
 
+::: tip 收录规则
+同一站点只接受第一个投稿人的邀请码/推广链接，重复投稿的同站点链接不再替换或重复收录，感谢理解。
+:::
+
 ## 第三方模型入口（直接可用）
 
-下面这些站点注册后即可开始使用，成功率相对较高（原投稿称）：
+下面这些站点注册后即可开始使用（原投稿称）：
 
-- **Grok / 其他模型白嫖入口**：<https://ai.kscsnkli.site/sign-up?aff=FGaQ>
-  - 原投稿称 Grok 4.6 和 m3 成功率较高，但具体模型与额度以页面实际显示为准。
-- **OpenCode**：<https://opencode.ai/go?ref=VNCVY9FFGD>
-  - 知名 AI 编程工具，点链接注册可能有额外权益，以官方页面为准。
-- **TeamRouter（DeepSeek + Codex）**：<https://teamorouter.com/?i=4557336aad>
-  - 原投稿称是 DeepSeek 最新模型 + Codex 的免费白嫖入口，模型与额度以实际页面为准。
-- **TokenRhythm（OpenSquilla）**：<https://tokenrhythm.studio/i/rf_tr_qmm34G8Ho8SLX_pdwUcoic9L>
-  - 活动称赠送免费 Token 并邀请体验 OpenSquilla 新功能，需注册后查看领取条件与额度。
-  - 原投稿提到有 68 元国产大模型、邀请好友限时活动继续延长，具体以页面为准。
+| 站点 连接 | 描述 |
+|---|---|
+| **Grok 白嫖入口**<br><https://ai.kscsnkli.site/sign-up?aff=FGaQ> | 原投稿称 Grok 4.6 和 m3 成功率较高，具体模型与额度以页面实际显示为准 |
+| **OpenCode**<br><https://opencode.ai/go?ref=VNCVY9FFGD> | 知名 AI 编程工具；对 DeepSeek 需求大的可以考虑它家的 Go plan（低价订阅），尤其 DeepSeek V4 Flash 量大管饱，详见下方 |
+| **TeamRouter（DeepSeek + Codex）**<br><https://teamorouter.com/?i=4557336aad> | 原投稿称是 DeepSeek 最新模型 + Codex 的免费白嫖入口，以实际页面为准 |
+| **TokenRhythm（OpenSquilla）**<br><https://tokenrhythm.studio/i/rf_tr_qmm34G8Ho8SLX_pdwUcoic9L> | 活动称赠送免费 Token、邀请体验 OpenSquilla 新功能；原投稿提到 68 元国产大模型、邀请好友活动继续延长，以页面为准 |
+
+::: details OpenCode Go plan 详情
+OpenCode Go 是低价编码模型订阅服务，面向想用低成本跑编程 agent 的用户：
+
+- **价格**：首月 $5，之后每月 $10，可随时取消，可额外充值
+- **DeepSeek V4 Flash**：在列且有限时 **2× 额度加成**，约每 5 小时 6.3 万次请求，量大管饱
+- **其他模型**：Grok 4.5、Kimi K3、Qwen3.7 Plus、GLM-5.2、MiniMax M3、DeepSeek V4 Pro、GPT 5.6 Luna、Hy3、MiMo-V2.5 等
+- 具体额度与价格以页面实际显示为准
+:::
 
 ## 注册送额度 / 积分兑换（FirstARPC 系列）
 
-以下两个活动共用同一个注册链接和邀请码，**注册一次即可，无需重复注册**：
+两个活动共用一个注册链接和邀请码，**注册一次即可，无需重复注册**：
 
-- 注册链接：<https://account.firstarpc.com/register?code=LLGKU9EP>
-
-注册完成后，保持登录状态打开下面的兑换入口，把赠送的积分兑换成对应平台的额度即可使用：
-
-- **DeepSeek V4 Pro 0813** 50 元额度：<https://novaaiapi.firstarpc.com>
-- **Kimi K3** 50 元额度：<https://novaaiapi.firstarpc.com>
+| 站点 连接 | 描述 |
+|---|---|
+| **DeepSeek V4 Pro 0813**<br>注册：<https://account.firstarpc.com/register?code=LLGKU9EP><br>兑换：<https://novaaiapi.firstarpc.com> | 50 元使用额度；注册完成后保持登录打开兑换入口，把赠送积分兑换成额度即可使用 |
+| **Kimi K3**<br>注册：<https://account.firstarpc.com/register?code=LLGKU9EP>（共用）<br>兑换：<https://novaaiapi.firstarpc.com> | 50 元使用额度；注册完成后保持登录打开兑换入口，把赠送积分兑换成额度即可使用 |
 
 ::: warning 注意
 - 原投稿称“邀请活动仅剩最后四天（应截止到周日）”，有效期以页面实际显示为准。

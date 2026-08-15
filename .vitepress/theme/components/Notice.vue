@@ -17,12 +17,14 @@ setTimeout(function () { visible.value = false }, 15000);
       <p class="notice-domain">
         <strong>
           建议你加入群聊哦~
+          <br>
+          注:心理树洞的群聊不在其中
         </strong>
       </p>
     </div>
     <div class="notice-footer">
       <a class="notice-btn" href="/docs/group.html" @click="closetz">群聊列表</a>
-      <div class="notice-btn" @click="closetz">朕晓之</div>
+      <div class="notice-btn" @click="closetz">彳亍</div>
     </div>
   </div>
 </template>
