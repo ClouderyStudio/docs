@@ -202,6 +202,11 @@ export const NAV_DATA: NavData[] = [
     title: 'AI',
     items: [
       {
+        title: 'AI免费额度与活动汇总',
+        link: '/nav/ai-free.md',
+        desc: '可以白嫖的AI额度、赠送积分兑换和限时邀请活动汇总'
+      },
+      {
         title: 'Kimi.ai - 会推理解析，能深度思考的AI助手',
         link: 'https://kimi.ai'
       },

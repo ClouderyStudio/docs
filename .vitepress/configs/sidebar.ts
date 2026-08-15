@@ -304,5 +304,20 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
             }
           ],
         },
+      ],
+      '/nav/': [
+        {
+          text: '导航',
+          items: [
+            {
+              text: '开始',
+              link: '/nav/'
+            },
+            {
+              text: 'AI免费额度与活动汇总',
+              link: '/nav/ai-free.md',
+            },
+          ],
+        },
       ]
     }
