@@ -31,9 +31,18 @@ onBeforeUnmount(() => document.removeEventListener('click', onCardClick))
 :::
 
 ## 机器人 伊蕾娜
-
+- QQ 3889046359
 - 可以在群聊和私信聊天
 - 可以 `@` 或引用她的信息触发聊天
+
+## 群号
+
+目前已有群聊：
+
+- `1058196769`
+- `1070244694`
+- `736569950`
+- `1098763670`
 
 ## 相关工具
 
@@ -54,15 +63,6 @@ onBeforeUnmount(() => document.removeEventListener('click', onCardClick))
     <div class="ht-card-link">qisoul.cldery.com →</div>
   </a>
 </div>
-
-## 群号
-
-目前已有群聊：
-
-- `1058196769`
-- `1070244694`
-- `736569950`
-- `1098763670`
 
 ## 心理援助热线 📞
 
