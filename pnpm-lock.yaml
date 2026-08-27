@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       vitepress-plugin-pagefind:
-        specifier: ^0.4.14
-        version: 0.4.14(pagefind@1.3.0)
+        specifier: ^0.4.19
+        version: 0.4.19(pagefind@1.3.0)(vitepress@1.6.3(@algolia/client-search@5.34.1)(postcss@8.5.6)(search-insights@2.17.3))(vue@3.5.18)
     devDependencies:
       '@mdit-vue/shared':
         specifier: ^2.1.4
@@ -660,8 +660,8 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
-  '@sugarat/theme-shared@0.0.5':
-    resolution: {integrity: sha512-dqOhVZ5Hub9cGABh4vD4bC0QY3SaWhb8pZ1KxJk7at+W4gyXL0q4OOhp0b5LnQwM/ACUqf/ZAplhaTRU1qbt4Q==}
+  '@sugarat/theme-shared@0.0.7':
+    resolution: {integrity: sha512-rFK+NF5ORXjxmisVjVKI1A2WWu/J2NMw367n9Dxy7rF4jJE8CaHqryu3vOLwp96RUBDbaN95ABT3E4wyaGzGKA==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -686,9 +686,6 @@ packages:
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
-
-  '@types/web-bluetooth@0.0.16':
-    resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
 
   '@types/web-bluetooth@0.0.21':
     resolution: {integrity: sha512-oIQLCGWtcFZy2JW77j9k8nHzAOpqMHLQejDA48XXMWH6tjCQHz5RCFz1bzsmROyL6PUm+LLnUiI4BCn221inxA==}
@@ -744,8 +741,10 @@ packages:
   '@vueuse/core@12.8.2':
     resolution: {integrity: sha512-HbvCmZdzAu3VGi/pWYm5Ut+Kd9mn1ZHnn4L5G8kOQTPs/IwIAmJoBrmYk2ckLArgMXZj0AW3n5CAejLUO+PhdQ==}
 
-  '@vueuse/core@9.13.0':
-    resolution: {integrity: sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==}
+  '@vueuse/core@14.2.1':
+    resolution: {integrity: sha512-3vwDzV+GDUNpdegRY6kzpLm4Igptq+GA0QkJ3W61Iv27YWwW/ufSlOfgQIpN6FZRMG0mkaz4gglJRtq5SeJyIQ==}
+    peerDependencies:
+      vue: ^3.5.0
 
   '@vueuse/integrations@12.8.2':
     resolution: {integrity: sha512-fbGYivgK5uBTRt7p5F3zy6VrETlV9RtZjBqd1/HxGdjdckBgBM4ugP8LHpjolqTj14TXTxSK1ZfgPbHYyGuH7g==}
@@ -791,14 +790,16 @@ packages:
   '@vueuse/metadata@12.8.2':
     resolution: {integrity: sha512-rAyLGEuoBJ/Il5AmFHiziCPdQzRt88VxR+Y/A/QhJ1EWtWqPBBAxTAFaSkviwEuOEZNtW8pvkPgoCZQ+HxqW1A==}
 
-  '@vueuse/metadata@9.13.0':
-    resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==}
+  '@vueuse/metadata@14.2.1':
+    resolution: {integrity: sha512-1ButlVtj5Sb/HDtIy1HFr1VqCP4G6Ypqt5MAo0lCgjokrk2mvQKsK2uuy0vqu/Ks+sHfuHo0B9Y9jn9xKdjZsw==}
 
   '@vueuse/shared@12.8.2':
     resolution: {integrity: sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==}
 
-  '@vueuse/shared@9.13.0':
-    resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
+  '@vueuse/shared@14.2.1':
+    resolution: {integrity: sha512-shTJncjV9JTI4oVNyF1FQonetYAiTBd+Qj7cY89SWbXSkx7gyhrgtEdF2ZAVWS1S3SHlaROO6F2IesJxQEkZBw==}
+    peerDependencies:
+      vue: ^3.5.0
 
   algoliasearch@5.34.1:
     resolution: {integrity: sha512-s70HlfBgswgEdmCYkUJG8i/ULYhbkk8N9+N8JsWUwszcp7eauPEr5tIX4BY0qDGeKWQ/qZvmt4mxwTusYY23sg==}
@@ -1275,10 +1276,11 @@ packages:
   vitepress-plugin-comment-with-giscus@1.1.15:
     resolution: {integrity: sha512-1DJjgN+7SYvn5ZkjuSXPmz7nlqfcrh4qCGGviiZghA2ELXnaO2m9WY7m+RisPSaqCn90xqe0JbO2T4NMq8iUBg==}
 
-  vitepress-plugin-pagefind@0.4.14:
-    resolution: {integrity: sha512-rtB3RITPPt77vJnolo9D8YrKzVSe2B9Jajl5Yxd3ZiqmSEud5BhS8j2JRsEEGxb/YNcBAWru52Qb2HNX5RUojw==}
+  vitepress-plugin-pagefind@0.4.19:
+    resolution: {integrity: sha512-o07g9H1ykmcT/Sh1ATRGlH9p/sVcnCC+KrWNN0r1gQk7e7VISerg4HsaSlB21GQdm2Cumtc6kmLhb97O0TEltA==}
     peerDependencies:
       pagefind: ^1.1.0
+      vitepress: ^1 || ^2
 
   vitepress@1.6.3:
     resolution: {integrity: sha512-fCkfdOk8yRZT8GD9BFqusW3+GggWYZ/rYncOfmgcDtP3ualNHCAg+Robxp2/6xfH1WwPHtGpPwv7mbA3qomtBw==}
@@ -1294,17 +1296,6 @@ packages:
 
   vue-command-palette@0.1.4:
     resolution: {integrity: sha512-v9wGV5RG/Qe/GLLP3dJGYEvBOHQAH1kTdfzv7/uDj4v51g9uB0J3dQSaREgsrAvAT7tSj/cSbVrGpaalr8z7tg==}
-
-  vue-demi@0.14.10:
-    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
-    engines: {node: '>=12'}
-    hasBin: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
 
   vue@3.5.18:
     resolution: {integrity: sha512-7W4Y4ZbMiQ3SEo+m9lnoNpV9xG7QVMLa+/0RFwwiAVkeYoyGXqWE85jabU4pllJNUzqfLShJ5YLptewhCWUgNA==}
@@ -1781,7 +1772,7 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@sugarat/theme-shared@0.0.5':
+  '@sugarat/theme-shared@0.0.7':
     dependencies:
       cross-spawn: 7.0.6
       gray-matter: 4.0.3
@@ -1808,8 +1799,6 @@ snapshots:
   '@types/trusted-types@2.0.7': {}
 
   '@types/unist@3.0.3': {}
-
-  '@types/web-bluetooth@0.0.16': {}
 
   '@types/web-bluetooth@0.0.21': {}
 
@@ -1901,15 +1890,12 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@vueuse/core@9.13.0(vue@3.5.18)':
+  '@vueuse/core@14.2.1(vue@3.5.18)':
     dependencies:
-      '@types/web-bluetooth': 0.0.16
-      '@vueuse/metadata': 9.13.0
-      '@vueuse/shared': 9.13.0(vue@3.5.18)
-      vue-demi: 0.14.10(vue@3.5.18)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 14.2.1
+      '@vueuse/shared': 14.2.1(vue@3.5.18)
+      vue: 3.5.18
 
   '@vueuse/integrations@12.8.2(focus-trap@7.6.5)':
     dependencies:
@@ -1923,7 +1909,7 @@ snapshots:
 
   '@vueuse/metadata@12.8.2': {}
 
-  '@vueuse/metadata@9.13.0': {}
+  '@vueuse/metadata@14.2.1': {}
 
   '@vueuse/shared@12.8.2':
     dependencies:
@@ -1931,12 +1917,9 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@vueuse/shared@9.13.0(vue@3.5.18)':
+  '@vueuse/shared@14.2.1(vue@3.5.18)':
     dependencies:
-      vue-demi: 0.14.10(vue@3.5.18)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
+      vue: 3.5.18
 
   algoliasearch@5.34.1:
     dependencies:
@@ -2444,17 +2427,16 @@ snapshots:
     transitivePeerDependencies:
       - vue
 
-  vitepress-plugin-pagefind@0.4.14(pagefind@1.3.0):
+  vitepress-plugin-pagefind@0.4.19(pagefind@1.3.0)(vitepress@1.6.3(@algolia/client-search@5.34.1)(postcss@8.5.6)(search-insights@2.17.3))(vue@3.5.18):
     dependencies:
-      '@sugarat/theme-shared': 0.0.5
-      '@vueuse/core': 9.13.0(vue@3.5.18)
+      '@sugarat/theme-shared': 0.0.7
+      '@vueuse/core': 14.2.1(vue@3.5.18)
       javascript-stringify: 2.1.0
       pagefind: 1.3.0
-      vue: 3.5.18
+      vitepress: 1.6.3(@algolia/client-search@5.34.1)(postcss@8.5.6)(search-insights@2.17.3)
       vue-command-palette: 0.1.4
     transitivePeerDependencies:
-      - '@vue/composition-api'
-      - typescript
+      - vue
 
   vitepress@1.6.3(@algolia/client-search@5.34.1)(postcss@8.5.10)(search-insights@2.17.3):
     dependencies:
@@ -2510,10 +2492,6 @@ snapshots:
       fuse.js: 6.6.2
       mitt: 3.0.1
       nanoid: 4.0.2
-
-  vue-demi@0.14.10(vue@3.5.18):
-    dependencies:
-      vue: 3.5.18
 
   vue@3.5.18:
     dependencies:
