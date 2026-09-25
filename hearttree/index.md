@@ -28,6 +28,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onCardClick))
 ::: warning 本群群规 请认真观看并遵守
 - [共享后台群规](HeartTreeHoleGroupRules.md)
 - [群聊细纲](HeartTreeHoleDetailedRules.md)
+- [管理条例](HeartTreeHoleAdminRules.md)
 :::
 
 ## 机器人 伊蕾娜
