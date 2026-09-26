@@ -45,6 +45,10 @@ onBeforeUnmount(() => document.removeEventListener('click', onCardClick))
 - `736569950`
 - `1098763670`
 
+## 群内活动
+
+- [活动规划](HeartTreeHoleActivityPlan.md)——主题日与活动日。**不是群规**，自愿参与，随时可改
+
 ## 相关工具
 
 <div class="ht-cards">

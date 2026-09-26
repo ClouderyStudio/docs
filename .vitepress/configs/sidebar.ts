@@ -63,6 +63,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 text: '共享后台管理条例',
                 link: '/hearttree/HeartTreeHoleAdminRules.md',
             },
+            {
+                text: '活动规划',
+                link: '/hearttree/HeartTreeHoleActivityPlan.md',
+            },
           ],
         },
       ],
