@@ -21,6 +21,7 @@ docs/
 ├── bmdocs/             # 笔墨星河文档
 ├── learn/              # 学习文档
 ├── nav/                # 导航页面
+├── api/                # 对外开放 API（OpenAPI 渲染 + 接入指南）
 └── public/             # 静态资源
 ```
 
@@ -208,6 +209,40 @@ pnpm build
 ```bash
 pnpm serve
 ```
+
+## 对外开放 API 分区（`/api/`）
+
+`/api/` 下的接口文档由 [vitepress-openapi](https://vitepress-openapi.enzonotario.me/) 直接渲染 OpenAPI 文档：
+
+- 接入指南（鉴权、作用域、错误形状、调用示例）：`api/index.md`
+- 接口参考：`api/scforge.md`，正文用 `<script setup>` 静态导入 JSON 再传给 `<OASpec :spec="spec" />`
+
+### OpenAPI 产物从哪来
+
+产物由 **ClouderyApi** 仓库的测试（`ClouderyApi.Tests/ScforgePublicOpenApiTests.cs`）
+从运行时 OpenAPI 文档导出，再由 ClouderyApi 仓库的 `docs/openapi/scforge-public.json` 复制过来。
+同步脚本会写出两份内容相同的副本：
+
+| 路径 | 用途 |
+| --- | --- |
+| `openapi/scforge-public.json` | 页面构建期 `import` 的正本（Vite 不允许从 `public/` 解析模块，所以不能放在 public 下） |
+| `public/openapi/scforge-public.json` | 站点静态文件，供 `/openapi/scforge-public.json` 直接下载 |
+
+**不要手改产物**，同步命令：
+
+```bash
+# 1) 在 ClouderyApi 仓库先跑一次测试，生成 / 更新 docs/openapi/scforge-public.json
+dotnet test ClouderyApi.Tests/ClouderyApi.Tests.csproj --filter FullyQualifiedName~ScforgePublicOpenApiTests
+
+# 2) 回到本文档站仓库同步（也可用环境变量 CLOUDERY_API_REPO 指定仓库路径）
+pnpm run sync:api <ClouderyApi 仓库路径>
+```
+
+### 新增一个对外开放的服务
+
+1. 在 ClouderyApi 里为该模块建一份 Swashbuckle 对外文档，并加一个像 `ScforgePublicOpenApiTests` 的导出 / 漂移守卫测试。
+2. 在 `api/` 下新建一页，`<script setup>` 里 `import spec from '../openapi/<服务>.json'`，正文 `<OASpec :spec="spec" />`（接入方式相同的部分写进 `api/index.md` 即可，不用重复）。
+3. 在 `.vitepress/configs/sidebar.ts` 的 `'/api/'` 块里加条目。
 
 ## 最佳实践
 
