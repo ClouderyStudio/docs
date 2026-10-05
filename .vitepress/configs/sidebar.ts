@@ -55,6 +55,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 text: 'SCForge',
                 link: '/api/scforge.md',
             },
+            {
+                text: '开发与自动化参考',
+                link: '/api/AGENTS.md',
+            },
           ],
         },
       ],
