@@ -152,6 +152,7 @@ https://gh-proxy.com/https://github.com/ClouderyStudio/sc-plugins/releases/downl
 | `publish-release.py` | 同上 | 编译 → 提交 → 打 tag → 推 Git 远端 → 建 Release → 传附件 → 转手发平台 |
 | `publish-to-scforge.py` | 同上 | 把 DLL 传到 SCForge（可独立运行，也是 CI 调用的那个） |
 | `check-sources.py` | 同上 | 仓库自检，含"Scforge 配方是否与 Assets 一一对应、分类/标签是否合法、slug 是否唯一" |
+| `verify-scforge-slugs.py` | 同上 | **slug 对账**：把配方里的 slug 与平台已有资源并排比对，揪出"会新建重复资源"的隐患。**不需要 Key** |
 | `ci.yml` | `.github/workflows/` | 自检 + 打 tag 时自动发平台（`publish-scforge` 作业） |
 
 ## 配置步骤
@@ -192,6 +193,31 @@ https://gh-proxy.com/https://github.com/ClouderyStudio/sc-plugins/releases/downl
 - `Kind` 只能是 `plugin`（仅服务端）或 `mod`（会下发客户端），**创建后不可更改**。
 - `Category` 与 `Tags` 是**白名单校验**，乱填会被 `400` 拒绝 —— 合法值见下方「分类与标签（只能取预设法）」。
 - 缺 `Scforge` 段或某个插件的配方时，脚本会跳过它并在自检里报 FAIL —— **不会静默漏发**。
+
+#### ⚠️ 配配方之前，先跑一次对账
+
+**这批插件如果以前手动发过，`Slug` 就不能自己编 —— 必须用平台上已有的那个。**
+
+脚本是按 slug 精确匹配来决定"新建还是追加版本"的。slug 对不上 → 探测不到 → **直接新建一份**，
+平台上就出现两个同名插件（一个旧 slug、一个新 slug）。这不是脚本 bug，是配方与平台脱节。
+
+所以填完配方、发版之前，先跑：
+
+```bash
+python .buildtools/verify-scforge-slugs.py
+```
+
+它读公开目录（**不需要任何 Key**），把「清单里的 slug」与「平台上已有的资源」并排摊开：
+
+- 标 `[有]`：对上了，发版会追加版本，符合预期。
+- 标 `[新]`：平台上没有，发版会**新建资源**。
+- **疑似重复告警**：如果某个 `[新]` slug 的名字，和平台上某个"未被清单认领"的资源对得上
+  （名字归一化后相同，`个人进服密码插件` 与 `个人进服密码` 会撞上），脚本会把它挑出来并
+  给出建议值 —— **这时候就应该把配方的 Slug 改成平台已有的那个，而不是照抄自己新编的。**
+- 末尾会列出"平台上没被任何配方认领的资源"，用来发现漏配或该清理的旧资源。
+
+> 真实踩过：一次配 9 个插件时凭感觉编了 slug，结果 6 个与平台上手动发的对不上，
+> 一次性多建了 6 份重复资源。加这个脚本就是为了让这类问题**在发版之前暴露**。
 
 ### 第 3 步：本机试跑
 
@@ -448,7 +474,7 @@ imports:
 | `GET /scforge/game-versions` | 受支持的游戏版本枚举，发布表单的取值来源 |
 | `GET /scforge/versions/{id}/download` | **对外唯一下载入口**（未审核的版本拿不到） |
 
-::: warning 三个实测踩出来的坑
+::: warning 四个实测踩出来的坑
 1. **`publish` 作用域不包含读列表**。只勾 `publish` 的 Key 调 `GET /addons/mine` 会吃 `403
    {"detail":"当前 API Key 缺少「读取」作用域"}`。所以 `publish-to-scforge.py` 做了降级：
    拿不到列表就改走"按 slug 逐个探测"，不强制要求同时勾 `read`。想一次拿全列表就把两个都勾上。
@@ -456,6 +482,18 @@ imports:
    不在顶层。取值要 `resp["addon"]["id"]`。
 3. **`/addons/{id}/versions` 的路径参数声明为 `uuid`，不吃 slug**。只有详情端点 `/addons/{idOrSlug}`
    接受 slug。所以"由 slug 追加版本"必须先查详情换 id，不能直接拿 slug 去调 versions。
+4. **`DELETE /addons/{id}` 同样只吃 `uuid`**。拿 slug 去删会得到 `404 {"detail":"资源不存在"}`
+   （**不是 403**，容易误判成"这个资源没了"）。而且**删资源需要 `manage` 作用域**，
+   自助签发的 Key 只有 `read` / `publish`，用它会吃 `403 {"detail":"当前 API Key 缺少「管理」作用域"}`。
+   结论：**删除只能走超管** —— 要么在网页后台删，要么让超管签一把带 `manage` 的 Key。
+:::
+
+::: tip 公开目录接口匿名可读，善加利用
+`GET /scforge/addons`（带 `page` / `pageSize`）**不需要任何凭据**，返回全部已发布资源
+（含 `slug` / `name` / `category` / `latestVersion` / `downloads`）。
+
+想知道"平台上现在有哪些资源、某个 slug 存不存在、有没有重复"，用它最省事 ——
+`.buildtools/verify-scforge-slugs.py` 就是靠它做的对账，**不依赖 Key，谁都能跑**。
 :::
 
 ### `POST /scforge/addons` 的字段（`multipart/form-data`，共 23 个）
@@ -507,6 +545,9 @@ imports:
 | 上传报 `400 不支持的标签：xxx` | `Tags` 里有非预设词。合法 20 个见上 |
 | 上传报 `400 请填写详细描述` | 配方缺 `Description` 字段 |
 | 资源改不了 slug | 正常。`Slug` 创建后接口层不允许更改，要换地址只能删资源重建 |
+| **平台上同一个插件出现了两份** | 配方里的 slug 与平台上已有的对不上，发版时新建了一份。先跑 `verify-scforge-slugs.py` 确认，再把配方 Slug 改成平台已有的；多出来的那份需**超管**删除（见上文第 4 个坑） |
+| 用 slug 调 `DELETE /addons/{slug}` 报"资源不存在" | 删除只吃 `uuid`，不吃 slug。先用 `GET /addons/{slug}` 查出 `id` |
+| `DELETE` 报"当前 API Key 缺少「管理」作用域" | 自助 Key 只有 `read`/`publish`，删除必须超管签发带 `manage` 的 Key |
 | 追加版本后标签是空的 | 已知限制，见上文 warning。标签只在创建资源时写入 |
 | 上传后平台上看不到 | 正常。资源与版本都要**过审核**才对外可见 |
 | 加速链接下载失败 | 脚本会自动退回直连并重试 5 次；若都失败，说明该 tag 的 Release 附件确实不存在 |
