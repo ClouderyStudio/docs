@@ -111,3 +111,11 @@ curl -X POST https://api.cldery.com/scforge/addons \
 接口参考由 ClouderyApi 的测试从运行时 OpenAPI 文档导出（`docs/openapi/scforge-public.json`），文档站与仓库里的产物是同一份文件，避免手写漂移。
 
 <a href="/openapi/scforge-public.json" target="_blank">下载 OpenAPI 文档（JSON）</a>
+
+## 接入与自动化
+
+想把这套接口接进自己的脚本或 CI（比如从 GitHub Release 自动发布插件）的话，本目录下另有一份
+`AGENTS.md`：里面有发布配方的写法、可照抄的 GitHub Actions 配置、常用接口速查与排错表。
+
+它是写给开发者与 AI 助手看的**维护笔记**（不随站点构建成页面），讲的是「怎么调」与「怎么自动化」，
+接口字段仍以本页与 [SCForge 接口参考](./scforge.md) 为准。
