@@ -9,6 +9,8 @@ import MNavLinks from './components/MNavLinks.vue'
 import mediumZoom from 'medium-zoom';
 import { NProgress } from 'nprogress-v2/dist/index.js'
 import 'nprogress-v2/dist/index.css'
+import { theme as openApiTheme, useTheme as useOpenApiTheme } from 'vitepress-openapi/client'
+import 'vitepress-openapi/dist/style.css'
 
 export default {
   ...Theme,
@@ -23,6 +25,11 @@ export default {
   enhanceApp({ app , router }) {
     app.component('ArticleMetadata' , ArticleMetadata)
     app.component('MNavLinks' , MNavLinks)
+
+    // /api/ 分区用 vitepress-openapi 渲染 OpenAPI 文档（见 api/scforge.md 的 <OASpec />）。
+    // 先设好中文文案，再注册 OA* 组件：openApiTheme.enhanceApp 内部读的就是这份全局配置。
+    useOpenApiTheme({ i18n: { locale: 'zh' } })
+    openApiTheme.enhanceApp({ app } as any)
 
     if (inBrowser) {
       NProgress.configure({ showSpinner: false })

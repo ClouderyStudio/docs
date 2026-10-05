@@ -43,6 +43,21 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           ],
         },
       ],
+      '/api/': [
+        {
+          text: '对外开放 API',
+          items: [
+            {
+                text: '接入指南',
+                link: '/api/'
+            },
+            {
+                text: 'SCForge',
+                link: '/api/scforge.md',
+            },
+          ],
+        },
+      ],
       '/hearttree/': [
         {
           text: '心理树洞',
