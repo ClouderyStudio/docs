@@ -12,7 +12,7 @@
 | --- | --- |
 | 生产环境 | `https://api.cldery.com` |
 
-路径规则为 `/{模块}/{资源}`，例如插件列表是 `GET /scforge/plugins`。除文件上传外，请求与响应都是 JSON，接口只走 HTTPS。
+路径规则为 `/{模块}/{资源}`，例如资源列表是 `GET /scforge/addons`。**插件（`kind=plugin`）与模组（`kind=mod`）共用这一棵资源树**，用 `kind` 字段或查询参数区分——`/plugins`、`/mods` 是站点上的两个预设筛选入口，接口层只有一个资源类型。除文件上传外，请求与响应都是 JSON，接口只走 HTTPS。
 
 ## 鉴权
 
@@ -55,16 +55,16 @@ curl -X POST https://api.cldery.com/scforge/api-keys \
 
 | 键 | 中文名 | 能做什么 |
 | --- | --- | --- |
-| `read` | 读取 | 查询自己发布的插件与版本列表 |
-| `publish` | 发布 | 发布新插件、编辑插件资料、追加或替换版本（都进审核流程） |
-| `manage` | 管理 | 删除自己的插件、把被驳回的提交重新送审 |
+| `read` | 读取 | 查询自己发布的资源与版本列表 |
+| `publish` | 发布 | 发布新资源、编辑资源资料、追加或替换版本（都进审核流程） |
+| `manage` | 管理 | 删除自己的资源、把被驳回的提交重新送审 |
 
 自助签发只开放 `read` 与 `publish`；`manage` 属于删改权限，必须由超管在后台签发。
 
-## 调用示例：用 API Key 发布插件
+## 调用示例：用 API Key 发布资源
 
 ```bash
-curl -X POST https://api.cldery.com/scforge/plugins \
+curl -X POST https://api.cldery.com/scforge/addons \
   -H "Authorization: Bearer $SCFORGE_TOKEN" \
   -F package=@和平区域插件.dll \
   -F kind=plugin \
@@ -102,7 +102,7 @@ curl -X POST https://api.cldery.com/scforge/plugins \
 
 - **时间**：所有时间字段按北京时间（UTC+8，形如 `2026-07-01T12:00:00+08:00`）输出。
 - **成功体**：各接口自行定义；只做副作用的写操作返回 `{"success":true}`。
-- **审核**：插件与版本的发布、编辑都进审核流程，审核通过前不对其它调用者可见。
+- **审核**：资源与版本的发布、编辑都进审核流程，审核通过前不对其它调用者可见。
 - **跨域**：在浏览器里从其它站点直接调用，需要在服务端配置白名单来源；服务端之间调用不受影响。
 - **频率**：请勿高频轮询，平台可能在网关层限制异常流量。
 
