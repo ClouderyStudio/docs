@@ -105,13 +105,21 @@ pnpm build      # 必须过；SSR 阶段会真的 import spec，路径写错会�
 
 本仓库的 VitePress `srcDir` 就是**仓库根**，所以任何 `.md` 都会被构建成页面。
 
-**本文件是有意保留为可访问页面的**：线上地址 `/api/AGENTS.html`。
+**本文件是有意保留为可访问页面的**：线上地址 `/api/agents`。
 它同时承担两个角色 —— 给 AI 助手看的约定文件（文件名保持 `AGENTS.md` 是行业惯例），
 以及对外公开的"开发与自动化参考"。
 
+::: tip 为什么地址是小写的
+Netlify 会把 URL 路径统一转小写，所以 `AGENTS.html` 请求过去会 **301** 跳到 `/api/agents`。
+两个地址都能访问，但**对外分享时请直接用小写** `/api/agents`，少一跳。
+
+另外注意 VitePress 的页面地址是 **`.html` 结尾**，不是 `.md`：
+写 `/api/AGENTS.md` 是拿不到页面的。
+:::
+
 ::: warning 不要把它排除掉
 `.vitepress/config.ts` 里**不要**给 `AGENTS.md` 加 `srcExclude`。
-一旦排除，`/api/AGENTS.html` 会直接 404 —— 本页就是靠"被正常渲染"才能访问的。
+一旦排除，`/api/agents` 会直接 404 —— 本页就是靠"被正常渲染"才能访问的。
 :::
 
 ---
