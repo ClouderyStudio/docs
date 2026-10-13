@@ -1,16 +1,18 @@
 ---
-description: 云术工作室对外开放 API 的开发与自动化参考：分区维护约定、把插件从 GitHub / Gitee / CNB 自动发布到 SCForge 平台的完整配置说明，含 CI 密钥配置手把手教程
+description: 云术工作室对外开放 API 的开发与自动化参考：分区维护约定、插件编译方法（本机 Roslyn 手工编译），以及把插件从 GitHub / Gitee / CNB 自动发布到 SCForge 平台的完整配置说明，含 CI 密钥配置手把手教程
 ---
 
 # 开发与自动化参考
 
-> 本页有两个读者，内容都写在一起：
+> 本页有三个读者，内容都写在一起：
 >
 > - **维护文档站的人 / AI 助手**：本页前半部分是 `/api` 分区的**维护约定**，改这个目录之前先读它。
-> - **插件作者 / 服主**：后半部分（**附录：把 Release 自动发到 SCForge 平台**）是**发布自动化教程** ——
+> - **插件作者 / 服主**：**附录一**是**发布自动化教程** ——
 >   怎么让打一个 tag 就自动把插件发到 SCForge 平台，**不需要你会写 CI**，照着抄即可。
+> - **要在这个仓库里改代码的 AI 助手**：**附录二**是**编译方法** ——
+>   这个仓库没有 `.csproj`、本机也没有 .NET SDK，插件是靠 Roslyn 的 `csc.dll` 手工编出来的，动手前先读它。
 >
-> 接口字段以[接入指南](./index.md)与 [SCForge 接口参考](./scforge.md) 为准，本页只讲"怎么维护"和"怎么自动化"。
+> 接口字段以[接入指南](./index.md)与 [SCForge 接口参考](./scforge.md) 为准，本页只讲"怎么维护""怎么编"和"怎么自动化"。
 
 **作用域仅限本目录（`api/`）**，对应线上 `/api/` 分区。仓库其它分区（`/docs`、`/serve`、`/game`、`/bmdocs`、`/nav`、`/hearttree`）不在本页约束范围内，改之前请先读对应目录的说明或问人。
 
@@ -27,7 +29,7 @@ description: 云术工作室对外开放 API 的开发与自动化参考：分�
 | --- | --- | --- |
 | `index.md` | 手写总览：入口、鉴权、作用域、调用示例、错误形状、约定 | ✅ 可以直接编辑 |
 | `scforge.md` | vitepress-openapi 的渲染壳：开头两段说明 + `<script setup>` + `<OASpec :spec="spec" />` | ⚠️ 只能改开头说明段，**接口细节一律不改** |
-| `AGENTS.md` | 本文件。分区维护约定 + 发布自动化教程 | ✅ 可以直接编辑 |
+| `AGENTS.md` | 本文件。分区维护约定 + 插件编译方法 + 发布自动化教程 | ✅ 可以直接编辑 |
 | `../openapi/scforge-public.json` | OpenAPI 产物（页面构建期 `import` 的正本） | ❌ 禁止手改 |
 | `../public/openapi/scforge-public.json` | 同一份产物的静态副本（供 `/openapi/scforge-public.json` 下载） | ❌ 禁止手改 |
 
@@ -124,7 +126,7 @@ Netlify 会把 URL 路径统一转小写，所以 `AGENTS.html` 请求过去会 
 
 ---
 
-# 附录：把 Release 自动发到 SCForge 平台
+# 附录一：把 Release 自动发到 SCForge 平台
 
 > 这一节面向**插件作者与服务器服主**。
 > 目标：在仓库打个 tag，CI 自动把编译好的插件 DLL 上传到 SCForge，不用手动传文件。
@@ -582,3 +584,219 @@ imports:
 
 > **关键教训**：打 tag 必须走 `publish-release.py`。
 > 手搓 `git tag` 只会触发 CI，**不会建 Release**，CI 随后取附件就是 404。
+
+---
+
+# 附录二：插件是怎么编译出来的（AI 助手必读）
+
+> 这一节写给**要在这个仓库里改代码的 AI 助手**。
+> 目标是让你第一次就编出正确的产物，而不是"改完发现编不出来 / 编出来是错的"。
+>
+> 一句话概括：**本机没有 .NET SDK，用的是 Roslyn 的 `csc.dll` 手工编译**；
+> 插件与模组的核心程序集引用**正好相反**，写反了不会报错、只会在运行时炸。
+
+## 为什么不能用 `dotnet build` / `msbuild`
+
+| 事实 | 后果 |
+| --- | --- |
+| 本机 **没有装 .NET SDK**（`dotnet --list-sdks` 为空） | 没有 `dotnet build` 可用 |
+| 仓库里**没有 `.csproj` / `.sln`** | 也没有工程文件可供 MSBuild 使用 |
+
+所以编译是靠 **`dotnet exec <csc.dll> @<响应文件>`** 直接驱动编译器：
+
+```
+dotnet  ──exec──▶  .buildtools/roslyn/tasks/netcore/bincore/csc.dll  ──@compile.rsp──▶  xxx.dll
+```
+
+工具链全部固化在 `.buildtools/` 下（**不在临时目录、不在 C 盘**），
+缺什么会从 NuGet 自动下载解压，所以**离线环境第一次跑会失败**、联网后自愈：
+
+| 目录 | 来源 | 用途 |
+| --- | --- | --- |
+| `roslyn/` | NuGet `microsoft.net.compilers.toolset` | 提供 `csc.dll` |
+| `netcore-ref/ref/net10.0/` | NuGet `microsoft.netcore.app.ref` | `net10.0` 参考程序集（`/r:` 用） |
+| `core/` | 从 `server-test/` 拷来（可由 `ServerCoreSource` 配置） | **服务端**核心程序集 |
+| `client-core/` | 从客户端安装目录拷来 | **客户端**核心程序集 |
+
+## 唯一该记住的一条：引用哪套核心，由"跑在哪"决定
+
+::: warning 这是整个仓库最贵的坑，写反了不报错
+| 你要做的东西 | 编译引用 | 理由 |
+| --- | --- | --- |
+| **插件** `ServerPlugin` | **服务端**核心（`.buildtools/core`） | 只在服务端进程里跑，可以用 `Game.Server.*` |
+| **模组** `.netmod` | **客户端**核心（`.buildtools/client-core`） | 客户端**也要加载它**，用了服务端专有类型 → 客户端 `TypeLoadException` **黑屏** |
+
+`LoadDllLogic` 对 mod 里每个程序集调 `assembly.GetTypes()`，**只要有一个类型解析不了，整包跳过**。
+所以"模组里引用了服务端专有 API"这种错误，在编译期**不会**报错（因为编译时引用了服务端核心就有这个类型），
+要到玩家客户端里才炸 —— 而且崩的是玩家，不是你的构建。
+:::
+
+## 两个入口脚本
+
+```powershell
+# 插件：按清单批量编译，并自动部署到测试服
+powershell -ExecutionPolicy Bypass -File "E:\Microsoft IDEs\repos\sc-plugins\.buildtools\build-plugin.ps1"
+
+# 模组：只编反作弊 mod（引用客户端核心）
+powershell -ExecutionPolicy Bypass -File "E:\Microsoft IDEs\repos\sc-plugins\.buildtools\build-anticheat-mod.ps1"
+```
+
+## 插件清单：`plugin-builds.json`（新增文件不用改它）
+
+**要编哪些插件、输出到哪、部署到哪，全部由这份 JSON 决定**，脚本里不写死任何路径：
+
+```json
+{
+  "ServerCoreSource": "server-test",
+  "Plugins": [
+    {
+      "Name": "WebPanel (网页控制台插件：内嵌 HTTP 面板，独立配置)",
+      "Source": "网页控制台插件\\源码",
+      "Output": "网页控制台插件\\网页控制台插件.dll",
+      "DeployTo": "server-test\\Plugins",
+      "DeployToAlso": ["server-test2\\Plugins"]
+    }
+  ]
+}
+```
+
+| 键 | 说明 |
+| --- | --- |
+| `Source` | 可以是**单个 `.cs`**，也可以是**目录** —— 目录会**递归展开**成下面所有 `.cs` |
+| `Sources` | 多个源文件的数组写法 |
+| `Output` | DLL 输出路径（仓库相对） |
+| `DeployTo` / `DeployToAlso` | 编完自动拷到哪个 `Plugins\` 目录；支持多个（本机有两个隔离测试服） |
+| `DeployAs` | 到目标目录后改名（例如产物叫 `payload.dll`，但要落地成 `xxx插件.dll`） |
+| `ServerCoreSource` | 从哪个测试服目录刷新服务端核心程序集 |
+
+::: tip 新增源码文件**不需要**动这份清单
+只要 `Source` 指向的是**目录**，新加的 `.cs` 会被自动收进来。
+这就是为什么 `基础插件`、`网页控制台插件` 这类多文件插件的 `Source` 写的是目录而不是逐个文件 ——
+逐个列举迟早会漏，而漏掉的文件**编译能过、运行时才缺功能**。
+:::
+
+::: warning 逻辑并入整合包后，**必须删掉清单条目**
+`plugin-builds.json` 里留着已迁移插件的条目，**每次整包构建都会把旧 DLL 重新部署到整合包旁边**，
+于是两份同时在跑：同一个钩子注册两个对象、同名命令出现两条、自定义包 ID 冲突。
+删 DLL 文件没用，**源头在清单**。已踩过一次（2026-09-28）。
+:::
+
+## 目录式源文件的正确用法（多文件插件）
+
+一个插件由多个 `.cs` 组成时，`Source` 写成目录：
+
+- 目录下**所有** `.cs` 会按路径排序后一起编译（排序是为了产物可复现）；
+- 目录里**一个 `.cs` 都没有**会直接报错，不会静默产出空 DLL；
+- 模块子目录（如 `源码/模块/*.cs`）也会被递归收进来。
+
+## `.ps1` 硬约束：纯 ASCII，或带 UTF-8 BOM
+
+::: warning 中文进 `.ps1` 会静默炸，且报错位置不对
+PowerShell 5.1 **在没有 UTF-8 BOM 时按 ANSI 读脚本**。
+一旦非 ASCII 字符出现在字符串字面量或路径里，解析会直接失败，
+报出莫名其妙的"意外的标记 }"或"字符串缺少终止符" —— 而且**报错行号常常不是真正出错的那一行**。
+
+正确做法：
+1. 中文路径/中文名放进 **UTF-8 的 JSON**，让脚本用 `-Encoding UTF8` 读（`plugin-builds.json` 就是这么来的）；
+2. 脚本本身保持**纯 ASCII**，或确保带 BOM；
+3. 改完任何 `.ps1` 都跑一遍机械闸门：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "E:\Microsoft IDEs\repos\sc-plugins\.buildtools\check-ascii.ps1"
+```
+
+它扫 `.buildtools\*.ps1`，纯 ASCII 或带 BOM 判 ok，否则列出字节位置并 `exit 1`。
+⚠️ 用编辑器重写一个带 BOM 的脚本会**静默丢掉 BOM** —— "带了 BOM 就安全"只在没人重写它的前提下成立。
+:::
+
+## csc 响应文件里的路径必须加引号
+
+工具链和仓库都位于**含空格的路径**下（`E:\Microsoft IDEs\...`）。
+响应文件里不加引号，`csc` 会把一个路径拆成两段，报一堆"未能找到元数据文件"。
+`build-plugin.ps1` 里已经统一加了引号，并且**用带 BOM 的 UTF-8 写响应文件**，
+这样 `csc` 才能正确解码里面的中文源文件路径。
+
+## 编完先自检，再发版
+
+```bash
+python .buildtools/check-sources.py
+```
+
+它会做 5 项检查（逐字字符串引号配对、`.gitignore` 白名单、敏感文件、README 齐全、SCForge 配方完整性），
+**发版前必须全过**。CI 的 `check` 作业跑的就是它。
+
+## 编译完常犯的三个错（按发生频率排）
+
+::: warning 1. 逐字串 `@"..."` 里的 ASCII 双引号
+前端代码（HTML/CSS/JS）在这个仓库里是**逐字字符串**内嵌进 C# 的，
+里面的每一个 ASCII `"` 都必须写成 `""`。
+
+最常漏的三处：CSS 的 `content:"…"`、属性选择器 `[x="1"]`、以及 **JS 注释里的英文引号**。
+
+**症状极具迷惑性**：一次刷出几百条 `CS1003 / CS1010 / CS1012`，
+而且**报错位置全部偏移**（说 1153 行错，实际错在 1152 行）——
+**别去数那几百条报错**，直接找最近改过的那段逐字串。
+
+机械校验手法（比肉眼可靠）：把逐字串抽出来还原成完整 JS/CSS，再交给 `node --check`。
+
+```python
+import io
+src = io.open(r"网页控制台插件/源码/网页前端资源.cs", encoding="utf-8").read()
+
+# 扫全文找 @" ... "（内部 "" 是转义；遇单个 " 结束）
+res, i = [], 0
+while (a := src.find('@"', i)) >= 0:
+    j, buf = a + 2, []
+    while j < len(src):
+        if src[j] == '"':
+            if src[j+1:j+2] == '"':
+                buf.append('"'); j += 2; continue
+            break
+        buf.append(src[j]); j += 1
+    res.append(src[a+2:j]); i = j + 1
+
+io.open("panel.js", "w", encoding="utf-8").write("\n".join(res))
+```
+
+```bash
+node --check panel.js      # 语法过了再数括号配平（{} () []）
+```
+
+⚠️ 文件名形如 **`sb.Append(@"...")`** —— 别写成 `AppendJs(@"...")` 去匹配，那是**无参函数名**，一条都匹配不到。
+:::
+
+::: warning 2. 值类型的 `null` 判断
+`ReadOnlyList<T>` 这类在核心中是 **struct**，不能 `!= null`、不能 `?.`。
+其余核心类型陷阱见 `sc-plugins/插件与模组开发注意事项.md`。
+:::
+
+::: warning 3. 换行符与文件编码
+改完文件用 grep 快速确认没有写进 NUL 字节：
+命中输出里出现 `Binary file matches` 就说明文件被写坏了。
+:::
+
+## 产物验证：别只看"编译成功"
+
+```powershell
+# 反编译看类型是否真的在，比"编译过了"强得多
+dotnet .buildtools/ilspy/tools/net8.0/any/ilspycmd.dll -t <类型全名> <某个.dll>
+```
+
+⚠️ 注意最后一个参数是 **`.dll`**。另外：**`.NET` 的字符串字面量是 UTF-16LE、类型名/方法名是 UTF-8**，
+用错编码搜会**假阴性**；UTF-16 还有**奇偶对齐**问题，两种对齐都要试。
+
+---
+
+## 一页速查（给 AI 助手）
+
+| 我要做的事 | 正确做法 |
+| --- | --- |
+| 编译插件 | `powershell -File .buildtools\build-plugin.ps1` |
+| 编译模组 | `powershell -File .buildtools\build-anticheat-mod.ps1` |
+| 新增一个插件 | 建目录 → 写 `.cs` → **在 `plugin-builds.json` 加一条** |
+| 给已有插件加一个 `.cs` | **什么都不用改**（`Source` 是目录就自动收） |
+| 逻辑并入整合包后 | **删掉 `plugin-builds.json` 里那条** |
+| 改了 `.ps1` | 跑 `check-ascii.ps1` |
+| 发版前 | 跑 `check-sources.py` |
+| 模组里想用 `Game.Server.*` | ❌ 不行，客户端会黑屏；改用服务端插件 |
+| 想看某个类型在不在 | `ilspycmd -t <全名> <dll>` |
