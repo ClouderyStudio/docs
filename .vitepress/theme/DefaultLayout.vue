@@ -19,6 +19,7 @@ import './styles/hidden.css'
 import './styles/vp-code.css'
 import './styles/vp-code-group.css'
 import './styles/sidebarIcon.css'
+import './styles/hearttree.css'
 import './custom.css'
 
 const { isDark } = useData()

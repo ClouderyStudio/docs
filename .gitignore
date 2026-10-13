@@ -9,4 +9,7 @@ yarn.lock
 .vitepress/dist
 *.local
 .vitepress/cache
+.vitepress/.temp
+.vitepress/dist-check
+.workbuddy/
 .vscode/

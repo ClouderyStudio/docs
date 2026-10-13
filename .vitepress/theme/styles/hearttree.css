@@ -49,3 +49,179 @@
   color: var(--vp-c-brand);
   margin-bottom: 8px;
 }
+
+/* ---- 贡献榜：名人堂（左锚点栏 + 右卡片） ---- */
+
+/* 榜单页把正文放宽，容得下左栏 + 卡片两列 */
+.content-container:has(.ht-hall) {
+  max-width: 900px;
+}
+
+.ht-hall {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+  margin: 28px 0 8px;
+}
+
+/* 左侧锚点栏 */
+.ht-hall-nav {
+  position: sticky;
+  top: 84px;
+  padding: 18px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  max-height: calc(100vh - 128px);
+  overflow-y: auto;
+}
+
+.ht-hall-nav-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--vp-c-text-1);
+}
+
+.ht-hall-nav-note {
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--vp-c-text-3);
+}
+
+.ht-hall-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: 13px;
+  padding-top: 11px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.ht-hall-nav-list a {
+  display: block;
+  padding: 6px 9px;
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+  text-decoration: none !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.ht-hall-nav-list a:hover {
+  color: var(--vp-c-brand);
+  background: var(--vp-c-default-soft, var(--vp-c-bg-alt));
+}
+
+/* 右侧卡片列表 */
+.ht-hall-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.ht-person {
+  padding: 18px 20px 17px;
+  border-radius: 14px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  scroll-margin-top: 84px;
+  transition: border-color 0.25s;
+}
+
+.ht-person:hover {
+  border-color: var(--vp-c-brand);
+}
+
+.ht-person-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ht-person-avatar {
+  flex: none;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--vp-c-bg-alt);
+  border: 2px solid var(--vp-c-divider);
+  transition: border-color 0.25s;
+}
+
+.ht-person:hover .ht-person-avatar {
+  border-color: var(--vp-c-brand);
+}
+
+.ht-person-name {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--vp-c-text-1);
+  word-break: break-word;
+}
+
+.ht-badge {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 18px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-2);
+}
+
+.ht-badge-brand {
+  border-color: var(--vp-c-brand);
+  background: transparent;
+  color: var(--vp-c-brand);
+}
+
+/* 贡献记录：上榜者的一句话简介，有内容时才渲染 */
+.ht-person-desc {
+  margin: 13px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--vp-c-divider);
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--vp-c-text-2);
+  white-space: pre-line;
+}
+
+@media (max-width: 768px) {
+  .ht-hall {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .ht-hall-nav {
+    position: static;
+    max-height: none;
+  }
+
+  .ht-hall-nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .ht-hall-nav-list a {
+    padding: 4px 11px;
+    border-radius: 999px;
+    background: var(--vp-c-bg-alt);
+  }
+}

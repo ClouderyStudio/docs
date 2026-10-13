@@ -3,8 +3,6 @@ title: 心理树洞
 description: 云术心理树洞——群规、机器人D酱、脑电波、栖所、心理测评量表与心理委员提醒
 ---
 
-<style src="/.vitepress/theme/styles/hearttree.css"></style>
-
 <script setup>
 import { onMounted, onBeforeUnmount } from 'vue'
 
@@ -48,6 +46,12 @@ onBeforeUnmount(() => document.removeEventListener('click', onCardClick))
 ## 群内活动
 
 - [活动规划](HeartTreeHoleActivityPlan.md)——主题日与活动日。**不是群规**，自愿参与，随时可改
+
+## 回声与贡献榜
+
+- [共享后台回声](HeartTreeHoleFeedback.md)——每季度一次，**非强制**地收集大家对群聊的意见。匿名、不考核、不进处理流程，但每一条都会被看见并有公开小结
+- [贡献榜](HeartTreeHoleContributors.md)——记下（曾）为这间小屋出过力的人。包括建屋、照看、写字、做工具、办活动、陪伴的人，**以及已经离开的人**
+- [名人堂](HeartTreeHoleHallOfFame.md)——贡献榜的名册。头像 + 昵称，**顺序无关排名**
 
 ## 相关工具
 

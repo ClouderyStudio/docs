@@ -86,6 +86,18 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 text: '活动规划',
                 link: '/hearttree/HeartTreeHoleActivityPlan.md',
             },
+            {
+                text: '共享后台回声',
+                link: '/hearttree/HeartTreeHoleFeedback.md',
+            },
+            {
+                text: '贡献榜',
+                link: '/hearttree/HeartTreeHoleContributors.md',
+            },
+            {
+                text: '名人堂',
+                link: '/hearttree/HeartTreeHoleHallOfFame.md',
+            },
           ],
         },
       ],
