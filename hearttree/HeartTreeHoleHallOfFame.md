@@ -34,7 +34,7 @@ aside: false
   <div class="ht-hall-list">
     <article class="ht-person" id="ht-m1">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2457483710&spec=640&img_type=jpg" alt="云竹" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2457483710&spec=100&img_type=jpg" alt="云竹" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">云竹<span class="ht-badge ht-badge-brand">群主</span></div>
       </div>
     </article>
@@ -46,67 +46,67 @@ aside: false
     </article>
     <article class="ht-person" id="ht-m3">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2244531390&spec=640&img_type=jpg" alt="比目双鱼" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2244531390&spec=100&img_type=jpg" alt="比目双鱼" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">比目双鱼</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m4">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2812563668&spec=640&img_type=jpg" alt="虚白虚白" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2812563668&spec=100&img_type=jpg" alt="虚白虚白" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">虚白虚白</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m5">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3353739856&spec=640&img_type=jpg" alt="AnonUsAl" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3353739856&spec=100&img_type=jpg" alt="AnonUsAl" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">AnonUsAl</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m6">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3801901707&spec=640&img_type=jpg" alt="屿" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3801901707&spec=100&img_type=jpg" alt="屿" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">屿</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m7">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=963336185&spec=640&img_type=jpg" alt="小石头" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=963336185&spec=100&img_type=jpg" alt="小石头" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">小石头</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m8">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2902029102&spec=640&img_type=jpg" alt="瓦尔纳西" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2902029102&spec=100&img_type=jpg" alt="瓦尔纳西" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">瓦尔纳西</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m9">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3959366979&spec=640&img_type=jpg" alt="胖头鱼不吃鱼" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3959366979&spec=100&img_type=jpg" alt="胖头鱼不吃鱼" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">胖头鱼不吃鱼</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m10">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2148257134&spec=640&img_type=jpg" alt="兆丰GEF" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=2148257134&spec=100&img_type=jpg" alt="兆丰GEF" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">兆丰GEF</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m11">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=1443013433&spec=640&img_type=jpg" alt=".(这.是个名字)" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=1443013433&spec=100&img_type=jpg" alt=".(这.是个名字)" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">.</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m12">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3925612430&spec=640&img_type=jpg" alt="𝓦𝓪𝓷𝓰𝓨𝓸𝓾𝓷𝓰🇮🇪" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3925612430&spec=100&img_type=jpg" alt="𝓦𝓪𝓷𝓰𝓨𝓸𝓾𝓷𝓰🇮🇪" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">𝓦𝓪𝓷𝓰𝓨𝓸𝓾𝓷𝓰🇮🇪</div>
       </div>
     </article>
     <article class="ht-person" id="ht-m13">
       <div class="ht-person-head">
-        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3014786442&spec=640&img_type=jpg" alt="Zero" loading="lazy" referrerpolicy="no-referrer" />
+        <img class="ht-person-avatar" src="https://q.qlogo.cn/headimg_dl?dst_uin=3014786442&spec=100&img_type=jpg" alt="Zero" loading="lazy" referrerpolicy="no-referrer" />
         <div class="ht-person-name">Zero</div>
       </div>
     </article>
