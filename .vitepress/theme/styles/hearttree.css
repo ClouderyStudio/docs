@@ -5,13 +5,19 @@
   margin: 16px 0;
 }
 
-.ht-card {
+/* .ht-card 是 <a>，必须把优先级抬到主题的 `.dark .vp-doc a`(0,2,1) 之上
+   （0,3,0），否则 color 会被抢成主题紫、font-weight 被抢成 500。 */
+.vp-doc .ht-cards .ht-card {
   display: flex;
   flex-direction: column;
   padding: 18px 20px;
   border-radius: 12px;
   border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg-soft);
+  /* .ht-card 是个 <a>，会被 .vp-doc a 上色加粗；这里显式复位，
+     免得卡内未单独声明颜色的文字继承成主题紫/500 字重。 */
+  color: var(--vp-c-text-1);
+  font-weight: 400;
   text-decoration: none !important;
   transition: border-color 0.25s, transform 0.25s;
 }
@@ -100,11 +106,14 @@
   border-top: 1px solid var(--vp-c-divider);
 }
 
-.ht-hall-nav-list a {
+/* 名录链接必须带 .vp-doc 前缀：否则 .vp-doc a / .dark .vp-doc a 会把
+   color 与 font-weight 抢过去，名录会变成「主题色的链接」而不是安静的灰字。 */
+.vp-doc .ht-hall .ht-hall-nav-list a {
   display: block;
   padding: 6px 9px;
   border-radius: 7px;
   font-size: 13px;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--vp-c-text-2);
   text-decoration: none !important;
@@ -114,7 +123,7 @@
   transition: color 0.2s, background-color 0.2s;
 }
 
-.ht-hall-nav-list a:hover {
+.vp-doc .ht-hall .ht-hall-nav-list a:hover {
   color: var(--vp-c-brand);
   background: var(--vp-c-default-soft, var(--vp-c-bg-alt));
 }
@@ -146,7 +155,9 @@
   gap: 14px;
 }
 
-.ht-person-avatar {
+/* 头像必须带 .ht-person 前缀：custom.css 里的 `.content img { border-radius: 10px }`
+   优先级 (0,1,1) 高于单独的 `.ht-person-avatar` (0,1,0)，会把圆形压成圆角方形。 */
+.ht-person .ht-person-avatar {
   flex: none;
   width: 54px;
   height: 54px;
@@ -219,7 +230,7 @@
     gap: 6px;
   }
 
-  .ht-hall-nav-list a {
+  .vp-doc .ht-hall .ht-hall-nav-list a {
     padding: 4px 11px;
     border-radius: 999px;
     background: var(--vp-c-bg-alt);

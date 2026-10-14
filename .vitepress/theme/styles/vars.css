@@ -135,6 +135,10 @@
   z-index: 30;
 }
 
-.medium-zoom-image {
+/* 只在「已放大」时抬层级：medium-zoom 打开的是挂在 body 下的克隆图，需要盖住遮罩层(30)。
+   若在静止态就给所有正文图 z-index:9999，凡处在 flex/grid 容器里的图片都会浮到
+   顶栏(30)、公告遮罩(99) 与公告弹窗(999) 之上 —— flex/grid 子项的 z-index
+   即使 position:static 也生效。 */
+.medium-zoom-image--opened {
   z-index: 9999 !important;
 }

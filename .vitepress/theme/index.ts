@@ -64,7 +64,9 @@ export default {
 
     // mediumZoom
     const initZoom = () => {
-      mediumZoom('.main img', { background: 'var(--vp-c-bg)' });
+      // 头像等界面元素不纳入点击放大：.ht-person-avatar 是 .ht-person-head 的 flex 子项，
+      // 一旦被挂上 .medium-zoom-image，其 z-index 就会生效而浮到顶栏与公告弹窗之上。
+      mediumZoom('.main img:not(.ht-person-avatar)', { background: 'var(--vp-c-bg)' });
     };
     onMounted(() => {
       initZoom();
