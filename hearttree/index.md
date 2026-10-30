@@ -48,6 +48,10 @@ onBeforeUnmount(() => document.removeEventListener('click', onCardClick))
 
 - [活动规划](HeartTreeHoleActivityPlan.md)——主题日与活动日。**不是群规**，自愿参与，随时可改
 
+## 就医攻略
+
+- [就医攻略](HeartTreeHoleMedicalGuide.md)——群友的就医经验整理：选医院、带什么、流程怎么走。**不是群规，也不是医疗建议**，以医生和医院现场为准
+
 ## 回声与贡献榜
 
 - [共享后台回声](HeartTreeHoleFeedback.md)——每季度一次，**非强制**地收集大家对群聊的意见。匿名、不考核、不进处理流程，但每一条都会被看见并有公开小结

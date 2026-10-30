@@ -87,6 +87,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
                 link: '/hearttree/HeartTreeHoleActivityPlan.md',
             },
             {
+                text: '就医攻略',
+                link: '/hearttree/HeartTreeHoleMedicalGuide.md',
+            },
+            {
                 text: '共享后台回声',
                 link: '/hearttree/HeartTreeHoleFeedback.md',
             },
