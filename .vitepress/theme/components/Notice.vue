@@ -16,6 +16,8 @@ const visible = ref(true)
 let timer: number | undefined
 
 function setTopHeight(value: string) {
+  // SSR 阶段没有 document（watch immediate 会在服务端先跑一次）
+  if (typeof document === 'undefined') return
   document.documentElement.style.setProperty('--vp-layout-top-height', value)
 }
 
@@ -33,11 +35,12 @@ watch(
 )
 
 onUnmounted(() => {
-  window.clearTimeout(timer)
+  clearTimeout(timer)
   setTopHeight('0px')
 })
 
-timer = window.setTimeout(() => {
+// 注意：不用 window.setTimeout——SSR 阶段 window 不存在
+timer = setTimeout(() => {
   visible.value = false
 }, 15000)
 </script>
