@@ -11,5 +11,6 @@ yarn.lock
 .vitepress/cache
 .vitepress/.temp
 .vitepress/dist-check
+.vitepress/dist-check*
 .workbuddy/
 .vscode/
