@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://api.cldery.com",
+      "url": "https://api.cloudery.cn",
       "description": "\u751F\u4EA7\u73AF\u5883"
     }
   ],

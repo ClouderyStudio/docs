@@ -14,7 +14,7 @@ description: 云术工作室对外开放 API 总览：统一入口、鉴权方�
 
 | 环境 | API 入口 |
 | --- | --- |
-| 生产环境 | `https://api.cldery.com` |
+| 生产环境 | `https://api.cloudery.cn` |
 
 路径规则为 `/{模块}/{资源}`，例如资源列表是 `GET /scforge/addons`。**插件（`kind=plugin`）与模组（`kind=mod`）共用这一棵资源树**，用 `kind` 字段或查询参数区分——`/plugins`、`/mods` 是站点上的两个预设筛选入口，接口层只有一个资源类型。除文件上传外，请求与响应都是 JSON，接口只走 HTTPS。
 
@@ -39,7 +39,7 @@ description: 云术工作室对外开放 API 总览：统一入口、鉴权方�
 也可以直接调接口签发（需要已登录的会话 Cookie）：
 
 ```bash
-curl -X POST https://api.cldery.com/scforge/api-keys \
+curl -X POST https://api.cloudery.cn/scforge/api-keys \
   -H "Content-Type: application/json" \
   -b "$CLOUDERY_SESSION_COOKIE" \
   -d '{"name":"发版机器人","scopes":["read","publish"]}'
@@ -68,7 +68,7 @@ curl -X POST https://api.cldery.com/scforge/api-keys \
 ## 调用示例：用 API Key 发布资源
 
 ```bash
-curl -X POST https://api.cldery.com/scforge/addons \
+curl -X POST https://api.cloudery.cn/scforge/addons \
   -H "Authorization: Bearer $SCFORGE_TOKEN" \
   -F package=@和平区域插件.dll \
   -F kind=plugin \
